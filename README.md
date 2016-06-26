@@ -5,7 +5,7 @@
 
 * This installation application of this demo contains many picture files, the package of [BabyFish Framework](https://github.com/babyfish-ct/babyfish) will be large if that framework uses this demo to be a part of itself.
 So this demo has been separated to this new github repository since [BabyFish Framework](https://github.com/babyfish-ct/babyfish)1.1.0)
-> Note! other demos are still in the Framework's repository, see [BabyFish Framework demo-guide](https://github.com/babyfish-ct/babyfish#demo-guide)).
+> Note! other demos are still in the Framework's repository.
 
 * Please view [guide](guide.html) to know how to run this web application.
 
