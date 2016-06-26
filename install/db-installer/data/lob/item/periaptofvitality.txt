@@ -1,0 +1,1 @@
+Increases the hit points of the Hero by 150 when worn

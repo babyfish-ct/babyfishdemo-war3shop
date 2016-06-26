@@ -1,0 +1,1 @@
+Regenerates the hit points of all friendly non-mechanical units in an area around your Hero by 225 over 45 seconds when used. This ability will be canceled if the units using the scroll are attacked or are hit by a spell which does damage. So use it when the unit is away from battle.

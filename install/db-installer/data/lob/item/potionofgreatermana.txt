@@ -1,0 +1,1 @@
+Restores 300 mana when used

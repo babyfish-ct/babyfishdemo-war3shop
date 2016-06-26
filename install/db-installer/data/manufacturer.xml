@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table 
+name="manufacturer"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key sequence="manufacturer_id_seq">
+            <column name="manufacturer_id" type="long"/>
+        </primary-key>
+        <column name="version" type="int"/>
+        <unique>
+            <column name="name" type="string[50]"/>
+        </unique>
+        <column name="race" type="int"/>
+        <column name="email" type="string[50]"/>
+        <column name="phone" type="string[50]"/>
+        <column name="description" type="clob"/>
+        <column name="image_mime_type" type="string[20]"/>
+        <column name="image" type="blob"/>
+    </schema>
+    <data>
+        <row
+            manufacturer_id="1"
+            version="1"
+            name="Necropolis"
+            race="2"
+            email="necropolis@war3.com"
+            phone="+86-028-12345678"
+            description="file(manufacturer/necropolis.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/necropolis.png)"/>
+        <row
+            manufacturer_id="2"
+            version="1"
+            name="Halls of the dead"
+            race="2"
+            email="halls.of.the.dead@war3.com"
+            phone="12345678"
+            description="file(manufacturer/hallsofthedead.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/hallsofthedead.png)"/>
+        <row
+            manufacturer_id="3"
+            version="1"
+            name="Black Citadel"
+            race="2"
+            email="black.citadel@war3.com"
+            phone="028-12345667"
+            description="file(manufacturer/blackcitadel.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/blackcitadel.png)"/>
+        <row
+            manufacturer_id="4"
+            version="1"
+            name="Crypt"
+            race="2"
+            email="crypt@war3.com"
+            phone="+86-12345678"
+            description="file(manufacturer/crypt.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/crypt.png)"/>
+        <row
+            manufacturer_id="5"
+            version="1"
+            name="Slaughter House"
+            race="2"
+            email="slaughter.house@war3.com"
+            phone="028-12345678"
+            description="file(manufacturer/slaughterhouse.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/slaughterhouse.png)"/>
+        <row
+            manufacturer_id="6"
+            version="1"
+            name="Temple of The Damned"
+            race="2"
+            email="Temple.of.the.damned@war3.com"
+            phone="+86-12345678"
+            description="file(manufacturer/templeofthedamned.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/templeofthedamned.png)"/>
+        <row
+            manufacturer_id="7"
+            version="1"
+            name="Sacrificial Pit"
+            race="2"
+            email="scarificial.pit@war3.com"
+            phone="028-12345678"
+            description="file(manufacturer/sacrificialpit.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/sacrificialpit.png)"/>
+        <row
+            manufacturer_id="8"
+            version="1"
+            name="Boneyard"
+            race="2"
+            email="boneyard@war3.com"
+            phone="123456789"
+            description="file(manufacturer/boneyard.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/boneyard.png)"/>
+        <row
+            manufacturer_id="9"
+            version="1"
+            name="Tomb of Relics"
+            race="2"
+            email="tomb.of.relics@war3.com"
+            phone="+86-028-12345678"
+            description="file(manufacturer/tombofrelics.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/tombofrelics.png)"/>
+        <row
+            manufacturer_id="10"
+            version="1"
+            name="Altar of Darkness"
+            race="2"
+            email="altar.of.darkness"
+            phone="+86-028-11223344"
+            description="file(manufacturer/altarofdarkness.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/altarofdarkness.png)"/>
+        <row
+            manufacturer_id="11"
+            version="1"
+            name="Town Hall"
+            race="1"
+            email="town.hall@war3.com"
+            phone="+86-11223344"
+            description="file(manufacturer/townhall.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/townhall.png)"/>
+        <row
+            manufacturer_id="12"
+            version="1"
+            name="Keep"
+            race="1"
+            email="keep@war3.com"
+            phone="+86-028-11223344"
+            description="file(manufacturer/keep.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/keep.png)"/>
+        <row
+            manufacturer_id="13"
+            version="1"
+            name="Castle"
+            race="1"
+            email="castle@war3.com"
+            phone="028-11223344"
+            description="file(manufacturer/castle.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/castle.png)"/>
+        <row
+            manufacturer_id="14"
+            version="1"
+            name="Barracks(Human)"
+            race="1"
+            email="barracks(human)@new.com"
+            phone="11223344"
+            description="file(manufacturer/barracks(human).txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/barracks(human).png)"/>
+        <row
+            manufacturer_id="15"
+            version="1"
+            name="Arcane Sanctum"
+            race="1"
+            email="arcane.sanctum@war3.com"
+            phone="+86-11223344"
+            description="file(manufacturer/arcanesanctum.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/arcanesanctum.png)"/>
+        <row
+            manufacturer_id="16"
+            version="1"
+            name="Workshop"
+            race="1"
+            email="workshop@war3.com"
+            phone="11223344"
+            description="file(manufacturer/workshop.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/workshop.png)"/>
+        <row
+            manufacturer_id="17"
+            version="1"
+            name="Gryphon Aviary"
+            race="1"
+            email="gryphon.aviary@war3.com"
+            phone="028-11223344"
+            description="file(manufacturer/gryphonaviary.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/gryphonaviary.png)"/>
+        <row
+            manufacturer_id="18"
+            version="1"
+            name="Arcane Vault"
+            race="1"
+            email="arcane.vault@war3.com"
+            phone="+86-028-11223344"
+            description="file(manufacturer/arcanevault.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/arcanevault.png)"/>
+        <row
+            manufacturer_id="19"
+            version="1"
+            name="Altar of Kings"
+            race="2"
+            email="altar.of.kings@war3.com"
+            phone="+86-028-12345678"
+            description="file(manufacturer/altarofkings.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/altarofkings.png)"/>
+        <row
+            manufacturer_id="20"
+            version="1"
+            name="Tree of Life"
+            race="4"
+            email="tree.of.life@war3.com"
+            phone="+86-028-87654321"
+            description="file(manufacturer/treeoflife.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/treeoflife.png)"/>
+        <row
+            manufacturer_id="21"
+            version="1"
+            name="Tree of Ages"
+            race="4"
+            email="tree.of.ages@war3.com"
+            phone="028-87654321"
+            description="file(manufacturer/treeofages.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/treeofages.png)"/>
+        <row
+            manufacturer_id="22"
+            version="1"
+            name="Tree of Eternity"
+            race="4"
+            email="tree.of.etemity@war3.com"
+            phone="87654321"
+            description="file(manufacturer/treeofeternity.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/treeofeternity.png)"/>
+        <row
+            manufacturer_id="23"
+            version="1"
+            name="Ancient of War"
+            race="4"
+            email="ancient.of.war@war3.com"
+            phone="028-87654321"
+            description="file(manufacturer/ancientofwar.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/ancientofwar.png)"/>
+        <row
+            manufacturer_id="24"
+            version="1"
+            name="Ancient of Wind"
+            race="4"
+            email="ancient.of.wind@war3.com"
+            phone="028-87654321"
+            description="file(manufacturer/ancientofwind.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/ancientofwind.png)"/>
+        <row
+            manufacturer_id="25"
+            version="1"
+            name="Ancient of Lore"
+            race="4"
+            email="ancient.of.lore"
+            phone="+86-028-87654321"
+            description="file(manufacturer/ancientoflore.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/ancientoflore.png)"/>
+        <row
+            manufacturer_id="26"
+            version="1"
+            name="Chimaera Roost"
+            race="4"
+            email="chimaera.roost@war3.com"
+            phone="+86-028-87654321"
+            description="file(manufacturer/chimaeraroost.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/chimaeraroost.png)"/>
+        <row
+            manufacturer_id="27"
+            version="1"
+            name="Ancient of Wonder"
+            race="4"
+            email="ancient.of.wonder@war3.com"
+            phone="87654321"
+            description="file(manufacturer/ancientofwonder.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/ancientofwonder.png)"/>
+        <row
+            manufacturer_id="28"
+            version="1"
+            name="Altar of Elders"
+            race="4"
+            email="altar.of.elders@war3.com"
+            phone="+86-028-87654321"
+            description="file(manufacturer/altarofelders.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/altarofelders.png)"/>
+        <row
+            manufacturer_id="29"
+            version="1"
+            name="Great Hall"
+            race="3"
+            email="greate.hall@war3.com"
+            phone="44332211"
+            description="file(manufacturer/greathall.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/greathall.png)"/>
+        <row
+            manufacturer_id="30"
+            version="1"
+            name="Stronghold"
+            race="3"
+            email="stronghold@war3.com"
+            phone="028-44332211"
+            description="file(manufacturer/stronghold.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/stronghold.png)"/>
+        <row
+            manufacturer_id="31"
+            version="1"
+            name="Fortress"
+            race="3"
+            email="fortress@war3.com"
+            phone="+86-028-44332211"
+            description="file(manufacturer/fortress.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/fortress.png)"/>
+        <row
+            manufacturer_id="32"
+            version="1"
+            name="Barracks(Orc)"
+            race="3"
+            email="barracks(orc)@war3.com"
+            phone="+86-44332211"
+            description="file(manufacturer/barracks(orc).txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/barracks(orc).png)"/>
+        <row
+            manufacturer_id="33"
+            version="1"
+            name="Spirit Lodge"
+            race="3"
+            email="spirit.lodge@war3.com"
+            phone="+86-44332211"
+            description="file(manufacturer/spiritlodge.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/spiritlodge.png)"/>
+        <row
+            manufacturer_id="34"
+            version="1"
+            name="Beastiary"
+            race="3"
+            email="beastiary@war3.com"
+            phone="44332211"
+            description="file(manufacturer/beastiary.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/beastiary.png)"/>
+        <row
+            manufacturer_id="35"
+            version="1"
+            name="Tauren Totem"
+            race="3"
+            email="tauren.toten@war3.com"
+            phone="028-44332211"
+            description="file(manufacturer/taurentotem.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/taurentotem.png)"/>
+        <row
+            manufacturer_id="36"
+            version="1"
+            name="Voodoo Lounge"
+            race="3"
+            email="voodoo.lounge@war3.com"
+            phone="028-44332211"
+            description="file(manufacturer/voodoolounge.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/voodoolounge.png)"/>
+        <row
+            manufacturer_id="37"
+            version="1"
+            name="Altar of Storms"
+            race="3"
+            email="altar.of.storms"
+            phone="+86-028-44332211"
+            description="file(manufacturer/altarofstorms.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/altarofstorms.png)"/>
+        <row
+            manufacturer_id="38"
+            version="1"
+            name="Tavern"
+            race="0"
+            email="tavern@war3.com"
+            phone="+86-028-88888888"
+            description="file(manufacturer/tavern.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/tavern.png)"/>
+        <row
+            manufacturer_id="39"
+            version="1"
+            name="Goblin Merchant"
+            race="0"
+            email="goblin.merchant@war3.com"
+            phone="+86-028-88888888"
+            description="file(manufacturer/goblinmerchant.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/goblinmerchant.png)"/>
+        <row
+            manufacturer_id="40"
+            version="1"
+            name="Goblin Laboratory"
+            race="0"
+            email="golbin.laboratory@war3.com"
+            phone="+86-028-88888888"
+            description="file(manufacturer/goblinlaboratory.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/goblinlaboratory.png)"/>
+        <row
+            manufacturer_id="41"
+            version="1"
+            name="Marketplace"
+            race="0"
+            email="marketplace@war3.com"
+            phone="+86-028-88888888"
+            description="file(manufacturer/marketplace.txt)"
+            image_mime_type="image/png"
+            image="file(manufacturer/marketplace.png)"/>
+    </data>
+</table>

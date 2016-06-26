@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:js="http://www.babyfishdemo.org/javascript"
+style="text-align:left">
+    <table>
+        <tbody js:id="smtpTbody">
+            <tr>
+                <td style="width:150px"><label>Protocol: </label></td>
+                <td>
+                    <input js:id="protocolTextBox" js:generate-client-id="true" 
+                    class="k-textbox" style="width:200px;"/>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label>Enable SSL: </label></td>
+                <td>
+                    <input js:id="enableSSLCheckbox" type="checkbox"/>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label>Host: </label></td>
+                <td>
+                    <input js:id="hostTextBox" js:generate-client-id="true" type="text" 
+                    class="k-textbox" style="width:200px;" required="true" 
+                    data-required-msg="Please input the host"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Port: </label></td>
+                <td>
+                    <input js:id="portTextBox" js:generate-client-id="true" type="number" 
+                    style="width:200px;"/>
+                </td>
+                <td><span class="k-invalid-msg"></span></td>
+            </tr>
+            <tr>
+                <td><label>User: </label></td>
+                <td>
+                    <input js:id="userTextBox" js:generate-client-id="true" type="email" 
+                    class="k-textbox" style="width:200px;" 
+                    required="true" 
+                    data-required-msg="Please input the user" 
+                    data-email-msg="The user is not valid email address"/>
+                </td>
+                <td><span class="k-invalid-msg"></span></td>
+            </tr>
+            <tr>
+                <td><label>Change password: </label></td>
+                <td><input js:id="passwordCheckbox" js:generate-client-id="true" type="checkbox"/></td>
+            </tr>
+        </tbody>
+        <tbody js:id="passwordTbody" style="display:none;">
+            <tr>
+                <td><label>Password: </label></td>
+                <td>
+                    <input js:id="passwordTextBox" js:generate-client-id="true" type="password" 
+                    class="k-textbox" style="width:200px;" 
+                    required="true" data-required-msg="Please input the password"/>
+                </td>
+                <td><span class="k-invalid-msg"></span></td>
+            </tr>
+            <tr>
+                <td><label>Password again: </label></td>
+                <td>
+                    <input js:id="passwordAgainTextBox" js:generate-client-id="true" type="password" 
+                    class="k-textbox" style="width:200px;" 
+                    required="true"
+                    data-required-msg="Please input the password again" 
+                    data-samenewpassword-msg="The two passwords must be same"/>
+                </td>
+                <td><span class="k-invalid-msg"></span></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <input js:id="okButton" type="button" value="Ok" class="k-primary" js:click="okButton_click"/>
+                    <div class="space"></div>
+                    <input js:id="cancelButton" type="button" value="Cancel" js:click="cancelButton_click"/>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

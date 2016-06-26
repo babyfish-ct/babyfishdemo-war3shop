@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div 
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <table>
+        <tr>
+            <td><label>Your address: </label></td>
+            <td>
+                <input js:id="addressTextBox" type="text" class="k-textbox" style="width:400px"
+                js:generate-client-id="true"
+                required="true" data-required-msg="Please enter your address"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td><label>Your phone: </label></td>
+            <td>
+                <input js:id="phoneTextBox" type="text" class="k-textbox" style="width:400px"
+                js:generate-client-id="true"
+                required="true" pattern="(\+\d+-)?(\d+-)?\d+"
+                data-required-msg="Please enter the phone" 
+                data-pattern-msg="The phone format is invalid(eg: +86-028-XXXXXXXX)"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align:center">
+                <input js:id="okButton" type="button" value="OK" js:click="okButton_click"/>
+                <div class="space"></div>
+                <input js:id="cancelButton" type="button" value="Cancel" js:click="cancelButton_click"/>
+            </td>
+        </tr>
+    </table>
+</div>

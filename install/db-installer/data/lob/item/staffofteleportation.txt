@@ -1,0 +1,1 @@
+Teleports the Hero to the targeted allied land unit or structure

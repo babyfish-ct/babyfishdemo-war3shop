@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<table 
+name="purchasing"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key sequence="purchasing_id_seq">
+            <column name="purchasing_id" type="long"/>
+        </primary-key>
+        <foreign-key reference="user">
+            <column name="purchaser_id" type="long"/>
+        </foreign-key>
+        <column name="creation_time" type="timestamp"/>
+        <column name="total_purchased_price" type="decimal"/>
+    </schema>
+    <data>
+        <row
+            purchasing_id="1"
+            purchaser_id="2"
+            creation_time="-100*24*60*60*1000"
+            total_purchased_price="495000"/>
+        <row
+            purchasing_id="2"
+            purchaser_id="2"
+            creation_time="-99*24*60*60*1000"
+            total_purchased_price="412500"/>
+        <row
+            purchasing_id="3"
+            purchaser_id="2"
+            creation_time="-98*24*60*60*1000"
+            total_purchased_price="412500"/>
+        <row
+            purchasing_id="4"
+            purchaser_id="6"
+            creation_time="-100*24*60*60*1000"
+            total_purchased_price="2247000"/>
+        <row
+            purchasing_id="5"
+            purchaser_id="6"
+            creation_time="-99*24*60*60*1000"
+            total_purchased_price="3261000"/>
+        <row
+            purchasing_id="6"
+            purchaser_id="6"
+            creation_time="-98*24*60*60*1000"
+            total_purchased_price="3145500"/>
+        <row
+            purchasing_id="7"
+            purchaser_id="7"
+            creation_time="-100*24*60*60*1000"
+            total_purchased_price="1786500"/>
+        <row
+            purchasing_id="8"
+            purchaser_id="7"
+            creation_time="-99*24*60*60*1000"
+            total_purchased_price="2041500"/>
+        <row
+            purchasing_id="9"
+            purchaser_id="7"
+            creation_time="-98*24*60*60*1000"
+            total_purchased_price="1714500"/>
+        <row
+            purchasing_id="10"
+            purchaser_id="8"
+            creation_time="-100*24*60*60*1000"
+            total_purchased_price="1602000"/>
+        <row
+            purchasing_id="11"
+            purchaser_id="8"
+            creation_time="-99*24*60*60*1000"
+            total_purchased_price="2118000"/>
+        <row
+            purchasing_id="12"
+            purchaser_id="8"
+            creation_time="-98*24*60*60*1000"
+            total_purchased_price="1775000"/>
+        <row
+            purchasing_id="13"
+            purchaser_id="9"
+            creation_time="-100*24*60*60*1000"
+            total_purchased_price="1696500"/>
+        <row
+            purchasing_id="14"
+            purchaser_id="9"
+            creation_time="-99*24*60*60*1000"
+            total_purchased_price="1873500"/>
+        <row
+            purchasing_id="15"
+            purchaser_id="9"
+            creation_time="-98*24*60*60*1000"
+            total_purchased_price="1597500"/>
+        <row
+            purchasing_id="16"
+            purchaser_id="10"
+            creation_time="-100*24*60*60*1000"
+            total_purchased_price="1155000"/>
+        <row
+            purchasing_id="17"
+            purchaser_id="10"
+            creation_time="-99*24*60*60*1000"
+            total_purchased_price="1404000"/>
+        <row
+            purchasing_id="18"
+            purchaser_id="10"
+            creation_time="-98*24*60*60*1000"
+            total_purchased_price="1851000"/>
+    </data>
+</table>

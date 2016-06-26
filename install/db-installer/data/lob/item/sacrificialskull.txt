@@ -1,0 +1,1 @@
+Creates an area of Blight at a target location. Blight Radius of 35

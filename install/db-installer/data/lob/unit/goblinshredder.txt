@@ -1,0 +1,3 @@
+<p>Goblin Zeppelins can carry up to 8 units. Siege Units count as 2 units so a Goblin Zeppelin can only carry 4 Siege Units.</p>
+
+<p>Units inside a Goblin Zeppelin will survive when it dies, but will be "dizzy" for a duration of time which causes them to have slowed attack and movement speed. Units killed will "spill out" over a wide area. This means that surrounding a webbed transport and killing it will generally not kill the passengers. If a Goblin Zeppelin is killed above water or an area where units cannot easily unload, the Goblin Zeppelin will die with everyone inside.</p>

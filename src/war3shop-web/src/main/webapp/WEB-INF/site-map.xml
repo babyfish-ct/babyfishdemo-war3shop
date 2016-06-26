@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+    <site-map-node/> has an attribute "permission".
+    When it equals AccountManager.PERMISSION, it means requires the account;
+    otherwise, it means requires the privilege.
+-->
+<site-map>
+    <site-map-node text="Products" visible-for-guest="true" permission="{special-privildege}:customer" template="SaleView"/>
+    <site-map-node text="Manage Customers" permission="{special-privildege}:account-manager" template="CustomerManagement"/>
+    <site-map-node text="Manage Administrators" permission="{special-privildege}:account-manager" template="AdministratorManagement"/>
+    <site-map-node text="Manage Roles" permission="{special-privildege}:account-manager" template="RoleManagement"/>
+    <site-map-node text="Sys Mail Settings" permission="{special-privildege}:account-manager" click="menu_sysMailConfiguration"/>
+    <site-map-node text="Manage Manufacturer" permission="manage-manufacturers" template="ManufacturerManagement"/>
+    <site-map-node text="Manage Products" permission="manage-products" template="ProductManagement"/>
+    <site-map-node text="Manage Preferentials" permission="manage-preferentials" template="PreferentialManagement"/>
+    <site-map-node text="Manage Orders" permission="manage-orders" template="OrderManagement"/>
+    <site-map-node text="My Purchasings" permission="purchase-products" template="PurchasingManagement"/>
+    <site-map-node text="My Purchased Products" permission="purchase-products" template="ProductViewForPurchaser"/>
+    <site-map-node text="My Orderes" permission="{special-privildege}:customer" template="OrderView"/>
+    <site-map-node text="My Alarms" permission="purchase-products" template="AlarmManagement"/>
+    <site-map-node text="My Alarms" permission="delivery-orders" template="AlarmManagement"/>
+    <site-map-node text="My Orderes" permission="delivery-orders" template="OrderDelivery"/>
+    <site-map-node text="Account">
+        <site-map-node text="Login/Register" click="menu_authorization" visible-for-guest="true"/>
+        <site-map-node text="Logout" click="menu_logout"/>
+        <site-map-node text="My Account Configuration" click="menu_configuration"/>
+        <site-map-node text="Change Password" click="menu_password"/>
+    </site-map-node>
+    <site-map-node text="Theme">
+        <site-map-node node-id="highcontrast" text="HightContrast(Dark)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="black" text="Black(Dark)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="moonlight" text="Moonlight(Dark)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="metroblack" text="Metro Black(Dark)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="blueopal" text="Blue Opal(Light)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="default" text="Classic(Light)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="bootstrap" text="Bootstrap(Light)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="silver" text="Silver(Light)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="uniform" text="Uniform(Light)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="metro" text="Metro(Light)" click="menu_theme" visible-for-guest="true"/>
+        <site-map-node node-id="flat" text="Flat(Mixed)" click="menu_theme" visible-for-guest="true"/>
+    </site-map-node>
+</site-map>

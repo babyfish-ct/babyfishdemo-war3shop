@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<table
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <tbody>
+        <tr>
+            <td><label>Name</label></td>
+            <td>
+                <input js:id="likeNameTextBox" js:generate-client-id="true" 
+                type="text" class="k-textbox" style="width:200px"/>
+            </td>
+        </tr>
+    </tbody>
+    <tbody js:id="activeTbody" style="display:none;">
+        <tr>
+            <td><label>Active: </label></td>
+            <td style="text-align:left;">
+                <select js:id="activeDropDownList" js:generate-client-id="true" style="width:200px;">
+                    <option value="0">--Disinterest--</option>
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td><label>Types</label></td>
+            <td>
+                <select js:id="typeMultiSelect" js:generate-client-id="true" 
+                multiple="multiple" style="width:200px" data-placeholder="Types...">
+                    <option value="0">Unit</option>
+                    <option value="1">Hero</option>
+                    <option value="2">Item</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Races</label></td>
+            <td>
+                <select js:id="raceMultiSelect" js:generate-client-id="true" 
+                multiple="multiple" style="width:200px" data-placeholder="Races...">
+                    <option value="0">Neutral</option>
+                    <option value="1">Human</option>
+                    <option value="2">Undead</option>
+                    <option value="3">Orc</option>
+                    <option value="4">NightEif</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Min Price</label></td>
+            <td>
+                <input js:id="minPriceTextBox" js:generate-client-id="true" 
+                type="number" style="width:200px" min="0"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Max Price</label></td>
+            <td>
+                <input js:id="maxPriceTextBox" js:generate-client-id="true" 
+                type="number" style="width:200px" min="0"/>
+            </td>
+        </tr>
+    </tbody>
+    <tbody js:id="creationTimeRangeTbody" style="display:none">
+        <tr>
+            <td><label>Min creation time</label></td>
+            <td>
+                <input js:id="minCreationTimeDateTimePicker" js:generate-client-id="true" style="width:200px;"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Max creation time</label></td>
+            <td>
+                <input js:id="maxCreationTimeDateTimePicker" js:generate-client-id="true" style="width:200px;"/>
+            </td>
+        </tr>
+    </tbody>
+    <tbody js:id="inventoryRangeTbody" style="display:none">
+        <tr>
+            <td><label>Min Inventory:</label></td>
+            <td>
+                <input js:id="minInventoryTextBox" js:generate-client-id="true" 
+                type="number" style="width:200px" min="0"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Max Inventory:</label></td>
+            <td>
+                <input js:id="maxInventoryTextBox" js:generate-client-id="true" 
+                type="number" style="width:200px" min="0"/>
+            </td>
+        </tr>
+    </tbody>
+    <js:include js:id="manufacturerDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        hasElementsText: 'Has Manufacturers',
+        includedElementsText: 'Included Manufacturers',
+        excludedElementsText: 'Excluded Manufacturers',
+        enableHasElements: (param.enableManufacturerDependencies || {}).enableHasElements,
+        hasElementsField: 'hasManufacturers',
+        includedElementsField: 'includedManufacturerIds',
+        excludedElementsField: 'excludedManufacturerIds',
+        dropDownTemplateName: 'ManufacturerDropDown',
+        dropDownTemplateParam: {
+            url: (param.enableManufacturerDependencies || {}).url
+        },
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Manufacturers...'
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Manufacturers...'
+        }
+    }"/>
+    <js:include js:id="purchaserDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        hasElementsText: 'Has Purchasers',
+        includedElementsText: 'Included Purchasers',
+        excludedElementsText: 'Excluded Purchasers',
+        enableHasElements: (param.enablePurchaserDependencies || {}).enableHasElements,
+        hasElementsField: 'hasPurchasers',
+        includedElementsField: 'includedPurchaserIds',
+        excludedElementsField: 'excludedPurchaserIds',
+        dropDownTemplateName: 'AdministratorDropDown',
+        dropDownTemplateParam: {
+            implicitSpecification: {
+                includedPrivilegeNames: 'purchase-products'
+            }
+        },
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Purchasers...',
+            dropDownTitle: 'Please select several included purcharsers'
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Purchasers...',
+            dropDownTitle: 'Please select several excluded purcharsers'
+        }
+    }"/>
+</table>

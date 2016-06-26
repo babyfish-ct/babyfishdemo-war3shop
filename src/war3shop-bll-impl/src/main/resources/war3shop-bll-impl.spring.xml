@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:ctx="http://www.springframework.org/schema/context"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:task="http://www.springframework.org/schema/task"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+    <ctx:component-scan base-package="org.babyfishdemo.war3shop.bll.impl"/>
+    <ctx:component-scan base-package="org.babyfishdemo.war3shop.bll.impl.aop"/>
+    
+    <task:executor id="task-executor" pool-size="16"/>
+    
+    <task:annotation-driven executor="task-executor" proxy-target-class="true"/>
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+    
+    <aop:aspectj-autoproxy/>
+        
+    <bean class="jj.play.ns.nl.captcha.CaptchaBean" scope="session">
+        <constructor-arg value="95"/>
+        <constructor-arg value="30"/>
+        <property name="bgProd">
+            <bean class="jj.play.ns.nl.captcha.backgrounds.FlatColorBackgroundProducer">
+                <constructor-arg>
+                    <bean class="java.awt.Color">
+                        <constructor-arg value="200" type="int"/>
+                        <constructor-arg value="200" type="int"/>
+                        <constructor-arg value="255" type="int"/>
+                    </bean>
+                </constructor-arg>
+            </bean>
+        </property>
+        <property name="txtProd">
+            <bean class="jj.play.ns.nl.captcha.text.producer.DefaultTextProducer">
+                <constructor-arg value="5"/>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="welcome-new-customer-mail-component" class="org.babyfishdemo.war3shop.bll.impl.MailComponent">
+        <constructor-arg>
+            <value><![CDATA[
+Dear ${userName}
+
+    Congratulations, you've registered a new account, the is password "${password}".
+    Don't tell the password to anyone and remember it carefully because know it(include us)
+            ]]></value>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="welcome-new-administrator-mail-component" class="org.babyfishdemo.war3shop.bll.impl.MailComponent">
+        <constructor-arg>
+            <value><![CDATA[
+Dear ${userName}
+
+    You've been created as an administrator by the super administrator.
+    Your random initializedPassword is "${initializedPassword}", please use it to login and change it as soon as possible
+            ]]></value>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="new-alarm-mail-component" class="org.babyfishdemo.war3shop.bll.impl.MailComponent">
+        <constructor-arg>
+            <value><![CDATA[
+Dear ${userName}
+
+    A new alarm is sent to you.
+    
+    id: ${id}
+    message: ${message}
+            ]]></value>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="new-order-mail-component" class="org.babyfishdemo.war3shop.bll.impl.MailComponent">
+        <constructor-arg>
+            <value><![CDATA[
+Dear ${userName}
+
+    You've created a new order, the order number is "${orderId}".
+            ]]></value>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="assign-order-mail-component" class="org.babyfishdemo.war3shop.bll.impl.MailComponent">
+        <constructor-arg>
+            <value><![CDATA[
+Dear ${userName}
+
+    Your order whose number is "${orderId}" is assigned, it will be deliveried to you as soon as possible.
+            ]]></value>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="unassign-order-mail-component" class="org.babyfishdemo.war3shop.bll.impl.MailComponent">
+        <constructor-arg>
+            <value><![CDATA[
+Dear ${userName}
+
+    We are so sorry because your order whose id "${orderId}" is unassigned because of some special reasons,
+    we will assign it again as soon as possible.
+            ]]></value>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="delivery-order-mail-component" class="org.babyfishdemo.war3shop.bll.impl.MailComponent">
+        <constructor-arg>
+            <value><![CDATA[
+Dear ${userName}
+
+    Your order whose number is "${orderId}" has been deliveried, thanks for your shopping.
+            ]]></value>
+        </constructor-arg>
+    </bean>
+    
+</beans>

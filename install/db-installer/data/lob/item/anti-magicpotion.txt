@@ -1,0 +1,1 @@
+Gives the Hero immunity to magical spells for 15 seconds

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div 
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <table>
+        <tr>
+            <td><label>Name:</label></td>
+            <td>
+                <input js:id="nameTextBox" js:generate-client-id="true" 
+                type="text" class="k-textbox" style="width:300px"
+                data-required-msg="Please enter the name"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td>Privileges: </td>
+            <td colspan="2">
+                <select js:id="privilegeMultiSelect" multiple="multiple" data-placeholder="Select privileges..." style="width:300px"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <button js:id="saveButton" js:click="saveButton_click">Save</button>
+                <div class="space"></div>
+                <button js:id="cancelButton" js:click="cancelButton_click">Cancel</button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,1 @@
+Creates a player-controlled critter that can be used to scout enemies.

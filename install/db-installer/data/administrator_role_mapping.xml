@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<table 
+name="administrator_role_mapping"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key>
+            <foreign-key reference="user">
+                <column name="user_id" type="long"/>
+            </foreign-key>
+            <foreign-key reference="role">
+                <column name="role_id" type="long"/>
+            </foreign-key>
+        </primary-key>
+    </schema>
+    <data>
+        <row user_id="2" role_id="1"/>
+        <row user_id="3" role_id="1"/>
+        <row user_id="4" role_id="1"/>
+        <row user_id="5" role_id="1"/>
+        <row user_id="2" role_id="2"/>
+        <row user_id="6" role_id="2"/>
+        <row user_id="7" role_id="2"/>
+        <row user_id="8" role_id="2"/>
+        <row user_id="9" role_id="2"/>
+        <row user_id="10" role_id="2"/>
+        <row user_id="11" role_id="3"/>
+        <row user_id="12" role_id="3"/>
+        <row user_id="13" role_id="3"/>
+        <row user_id="14" role_id="4"/>
+        <row user_id="15" role_id="4"/>
+        <row user_id="16" role_id="4"/>
+        <row user_id="17" role_id="4"/>
+        <row user_id="18" role_id="4"/>
+        <row user_id="19" role_id="4"/>
+        <row user_id="20" role_id="4"/>
+    </data>
+</table>

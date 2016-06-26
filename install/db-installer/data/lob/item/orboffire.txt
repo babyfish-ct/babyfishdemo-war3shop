@@ -1,0 +1,1 @@
+Adds 5 bonus fire damage to the attack of a Hero when carried. Deals spell damage. The Hero's attacks also become ranged when attacking air and do splash damage (14 radius) to nearby enemy units

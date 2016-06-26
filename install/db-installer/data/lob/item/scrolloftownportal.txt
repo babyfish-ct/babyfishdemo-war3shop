@@ -1,0 +1,1 @@
+Teleports the Hero and any of its nearby troops to a target friendly town hall

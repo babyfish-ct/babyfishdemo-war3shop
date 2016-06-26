@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div 
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript"
+style="position:absolute;left:0px;top:0px;right:0px;bottom:0px;width:auto;height:auto;box-sizing:border-box;">
+
+    <ul js:id="panelBar">
+        <li class="k-state-active">
+            <span class="k-link k-state-selected" style="font-weight:bold;">Specification</span>
+            <div style="padding:10px">
+                <fieldset class="k-block">
+                    <legend>Specification</legend>
+                    <js:include js:id="productSpecification" 
+                    src="ProductSpecification" 
+                    param="{
+                        enableManufacturerDependencies: true
+                    }"
+                    js:specificationchanged="productSpecification_specificationchanged"/>
+                </fieldset>
+                <fieldset class="k-block" style="margin-top:20px;">
+                    <legend>Orders(Drag any column to reorder it)</legend>
+                    <ol js:id="orderedColumnList">
+                        <li style="height:30px;cursor: url('images/dragable.cur'), default;">
+                            <span column="name"  style="width:50px;display:inline-block;text-decoration:line-through;font-weigth:lighter;">&nbsp;Name&nbsp;</span>
+                            <span class="k-tool-group k-button-group">
+                                <a href="#" role="button" class="k-tool k-group-start" unselectable="on" mode="asc">
+                                    <span class="k-icon k-i-arrow-n">Ascending</span>
+                                </a>
+                                <a href="#" role="button" class="k-tool k-state-selected" unselectable="on">
+                                    <span class="k-icon k-i-cancel">None</span>
+                                </a>
+                                <a href="#" role="button" class="k-tool k-group-end" unselectable="on" mode="desc">
+                                    <span class="k-icon k-i-arrow-s">Descending</span>
+                                </a>
+                            </span>
+                        </li>
+                        <li style="height:30px;cursor: url('images/dragable.cur'),default;">
+                            <span column="price"  style="width:50px;display:inline-block;text-decoration:line-through;font-weigth:lighter;">&nbsp;Price&nbsp;</span>
+                            <span class="k-tool-group k-button-group">
+                                <a href="#" role="button" class="k-tool k-group-start" unselectable="on" mode="asc">
+                                    <span class="k-icon k-i-arrow-n">Ascending</span>
+                                </a>
+                                <a href="#" role="button" class="k-tool k-state-selected" unselectable="on">
+                                    <span class="k-icon k-i-cancel">None</span>
+                                </a>
+                                <a href="#" role="button" class="k-tool k-group-end" unselectable="on" mode="desc">
+                                    <span class="k-icon k-i-arrow-s">Descending</span>
+                                </a>
+                            </span>
+                        </li>
+                        <li style="height:30px;cursor: url('images/dragable.cur'),default;">
+                            <span column="race"  style="width:50px;display:inline-block;text-decoration:line-through;font-weigth:lighter;">&nbsp;Race&nbsp;</span>
+                            <span class="k-tool-group k-button-group">
+                                <a href="#" role="button" class="k-tool k-group-start" unselectable="on" mode="asc">
+                                    <span class="k-icon k-i-arrow-n">Ascending</span>
+                                </a>
+                                <a href="#" role="button" class="k-tool k-state-selected" unselectable="on">
+                                    <span class="k-icon k-i-cancel">None</span>
+                                </a>
+                                <a href="#" role="button" class="k-tool k-group-end" unselectable="on" mode="desc">
+                                    <span class="k-icon k-i-arrow-s">Descending</span>
+                                </a>
+                            </span>
+                        </li>
+                        <li style="height:30px;cursor: url('images/dragable.cur'),default;">
+                            <span column="type"  style="width:50px;display:inline-block;text-decoration:line-through;font-weigth:lighter;">&nbsp;Type&nbsp;</span>
+                            <span class="k-tool-group k-button-group">
+                                <a href="#" role="button" class="k-tool k-group-start" unselectable="on" mode="asc">
+                                    <span class="k-icon k-i-arrow-n">Ascending</span>
+                                </a>
+                                <a href="#" role="button" class="k-tool k-state-selected" unselectable="on">
+                                    <span class="k-icon k-i-cancel">None</span>
+                                </a>
+                                <a href="#" role="button" class="k-tool k-group-end" unselectable="on" mode="desc">
+                                    <span class="k-icon k-i-arrow-s">Descending</span>
+                                </a>
+                            </span>
+                        </li>
+                    </ol>
+                </fieldset>
+            </div>  
+        </li>
+        <li class="k-state-active">
+            <span class="k-link" style="font-weight:bold;">My Cart</span>
+            <div style="padding:10px;">
+                <div js:id="orderItemGrid"></div>
+                <div style="margin-top:20px;text-align:center;">
+                    <input 
+                    type="button" js:id="viewDetailInformationButton" 
+                    js:click="viewDetailInformationButton_click" 
+                    value="View Detail Information..."/>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div>
+        <div js:id="productListView" style="position:absolute;left:10px;top:10px;right:10px;bottom:50px;overflow:hidden"></div>
+        <div js:id="productPager" style="position:absolute;left:10px;right:10px;bottom:10px;height:30px;"></div>
+    </div>
+
+</div>

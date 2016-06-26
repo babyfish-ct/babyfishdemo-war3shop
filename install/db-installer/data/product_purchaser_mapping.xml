@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table name="product_purchaser_mapping" 
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key>
+            <foreign-key reference="product">
+                <column name="product_id" type="long"/>
+            </foreign-key>
+            <foreign-key reference="user">
+                <column name="purchaser_id" type="long"/>
+            </foreign-key>
+        </primary-key>
+    </schema>
+    <data>
+        <row product_id="108" purchaser_id="7"/>
+        <row product_id="108" purchaser_id="8"/>
+        <row product_id="108" purchaser_id="9"/>
+    </data>
+</table>

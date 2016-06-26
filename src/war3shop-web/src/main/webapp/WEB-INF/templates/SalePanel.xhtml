@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript"
+class="sale-panel-class"
+style="position:absolute;position:absolute;left:0px;right:0px;top:0px;bottom:0px;">
+    <div js:id="productDiv" style="position:absolute;left:0px;right:0px;top:0px;bottom:0px">
+        <div style="overflow:hidden;position:absolute;left:0px;right:0px;top:0px;bottom:34px;">
+            <div style="float:left">
+                <img js:id="photoImg"/>
+            </div>
+            <div style="margin-left:110px">
+                <div style="display:inline-block;width:100%">
+                    <div style="font-size:16px;font-weight:bold;padding:4px">
+                        <span js:id="nameSpan"></span>
+                    </div>
+                    <table>
+                        <tr>
+                            <td style="text-align:right;">Type: </td>
+                            <td><span js:id="typeSpan"></span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">Race: </td>
+                            <td><span js:id="raceSpan"></span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">Price: </td>
+                            <td>$<span js:id="priceSpan"></span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">Quantity: </td>
+                            <td>
+                                <span js:id="quantitySpan"></span>
+                                -
+                                <span js:id="buyQuantitySpan"></span>,
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;position:absolute;left:0px;right:0px;height:32px;bottom:0px">
+            <div js:id="buttonTooltipDiv" style="display:inline-block;">
+                <button js:id="preferentialButton" js:click="preferentialButton_click" tooltip="Preferential">
+                    <img src="images/preferential.png"/>
+                </button>
+                <div class="space"></div>
+                <button js:id="descriptionButton" js:click="descriptionButton_click" tooltip="Description">
+                    <img src="images/description.png"/>
+                </button>
+                <div class="space"></div>
+                <button js:id="manufacturerButton" js:click="manufacturerButton_click" tooltip="Manufacturers">
+                    <img src="images/manufacturer.png"/>
+                </button>
+            </div>
+            <div class="space"></div>
+            <button js:id="buyButton" class="k-primary" js:click="buyButton_click">
+                <img src="images/cart.png"/><div class="space"></div>Add into cart
+            </button>
+        </div>
+    </div>
+    <div js:id="preferentialDiv" style="position:absolute;left:0px;right:0px;top:0px;bottom:0px;display:none">
+        <div style="overflow:auto;position:absolute;left:0px;right:0px;top:0px;bottom:34px;padding:5px;text-align:center">
+            <table>
+                <tr>
+                    <td style="text-align:center;font-weight:bold;" colspan="2">Preferential</td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Start Date: </td>
+                    <td><span js:id="preferentialStartDateSpan"></span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">End Date: </td>
+                    <td><span js:id="preferentialEndDateSpan"></span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">ThresholdType: </td>
+                    <td><span js:id="preferentialThresholdTypeSpan"></span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">ActionType: </td>
+                    <td><span js:id="preferentialActionTypeSpan"></span></td>
+                </tr>
+            </table>
+            <div js:id="gridTooltipDiv">
+                <div js:id="preferentialItemGridDiv"></div>
+            </div>
+        </div>
+        <div style="text-align:center;position:absolute;left:0px;right:0px;height:34px;bottom:0px">
+            <button js:id="preferentialBackButton" js:click="preferentialBackButton_click">
+                <img src="images/back.png"/><div class="space"></div>Back
+            </button>
+        </div>
+    </div>
+    <div js:id="manufacturerDiv" style="position:absolute;left:0px;right:0px;top:0px;bottom:0px;display:none">
+        <div style="overflow:auto;position:absolute;left:0px;right:0px;top:0px;bottom:34px;padding:5px;text-align:center">
+            <div js:id="manufacturerListView"></div>
+        </div>
+        <div style="text-align:center;position:absolute;left:0px;right:0px;height:34px;bottom:0px">
+            <button js:id="manufacturerBackButton" js:click="manufacturerBackButton_click">
+                <img src="images/back.png"/><div class="space"></div>Back
+            </button>
+        </div>
+    </div>
+    <div js:id="descriptionDiv" style="position:absolute;left:0px;right:0px;top:0px;bottom:0px;display:none">
+        <div js:id="descriptionTextDiv" style="overflow:auto;position:absolute;left:0px;right:0px;top:0px;bottom:34px;"></div>
+        <div style="text-align:center;position:absolute;left:0px;right:0px;height:34px;bottom:0px">
+            <button js:id="descriptionBackButton" js:click="descriptionBackButton_click">
+                <img src="images/back.png"/><div class="space"></div>Back
+            </button>
+        </div>
+    </div>
+</div>

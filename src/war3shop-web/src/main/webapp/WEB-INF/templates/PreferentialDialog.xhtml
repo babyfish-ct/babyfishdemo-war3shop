@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div 
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <table style="margin:10px">
+        <tr>
+            <td><label>Product: </label></td>
+            <td colspan="2">
+                <js:include js:id="productDropDown" 
+                src="ProductDropDown" param="{ 
+                    mode:'single',
+                    enableActiveChoices: true 
+                }" 
+                style="width:200px;display:inline-block;"/>
+                <span 
+                js:id="productInvalidMsg" 
+                class="k-manual-msg k-invalid-msg k-tooltip k-tooltip-validation k-widget" 
+                style="display:none">
+                    Please select a product
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Active: </label></td>
+            <td><input js:id="activeCheckbox" type="checkbox"  js:generate-client-id="true"/></td>
+        </tr>
+        <tr>
+            <td><label>Start Date</label></td>
+            <td colspan="2">
+                <input js:id="startDatePicker" type="date" style="width:200px" 
+                required="true" data-required-msg="Please enter start date" 
+                js:generate-client-id="true"/>
+                <span class="k-invalid-msg"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label>End Date: </label></td>
+            <td colspan="2">
+                <input js:id="endDatePicker" type="date" style="width:200px"
+                required="true" data-required-msg="Please enter start date"
+                js:generate-client-id="true"/>
+                <span class="k-invalid-msg"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Threshold Type: </label></td>
+            <td colspan="2">
+                <select js:id="thresholdTypeDropDownList" style="width:200px"
+                js:generate-client-id="true">
+                    <option value="0">Quantity</option>
+                    <option value="1">Money</option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label>Action Type: </label></td>
+            <td colspan="2">
+                <select js:id="actionTypeDropDownList" style="width:200px"
+                js:generate-client-id="true">
+                    <option value="0">Multiplied by percentage</option>
+                <option value="1">Reduce money</option>
+                <option value="2">Send gift</option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label>Items: </label></td>
+            <td>
+                <div js:id="preferentialItemGrid" style="width:600px"></div>
+            </td>
+            <td>
+                <span js:id="itemsInvalidMsg" 
+                class="k-manual-msg k-invalid-msg k-tooltip k-tooltip-validation k-widget" 
+                style="display:none">
+                </span>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align:center">
+        <button js:id="saveButton" class="k-primary" js:click="saveButton_click">Save</button>
+        <div class="space"></div>
+        <button js:id="cancelButton" js:click="cancelButton_click">Cancel</button>
+    </div>
+</div>

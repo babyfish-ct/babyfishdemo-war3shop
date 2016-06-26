@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<table 
+name="role_privilege_mapping"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key>
+            <foreign-key reference="role">
+                <column name="role_id" type="long"/>
+            </foreign-key>
+            <foreign-key reference="privilege">
+                <column name="privilege_id" type="long"/>
+            </foreign-key>
+        </primary-key>
+    </schema>
+    <data>
+        <row role_id="1" privilege_id="1"/>
+        <row role_id="1" privilege_id="2"/>
+        <row role_id="1" privilege_id="3"/>
+        <row role_id="2" privilege_id="4"/>
+        <row role_id="3" privilege_id="5"/>
+        <row role_id="4" privilege_id="6"/>
+    </data>
+</table>

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<table
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <tr>
+        <td><label>Active: </label></td>
+        <td style="text-align:left;">
+            <select js:id="activeDropDownList" js:generate-client-id="true" style="width:200px;">
+                <option value="0">--Disinterest--</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Min Date</label></td>
+        <td>
+            <input js:id="minDatePicker" js:generate-client-id="true" style="width:200px;"/>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Max Date</label></td>
+        <td>
+            <input js:id="maxDatePicker" js:generate-client-id="true" style="width:200px;"/>
+        </td>
+    </tr>
+    <tr>
+        <td><lable>Threshold Types</lable></td>
+        <td>
+            <select js:id="thresholdTypeMultiSelect" js:generate-client-id="true" 
+            multiple="multiple" style="width:200px" data-placeholder="Threshold Types...">
+                <option value="0">Quantity</option>
+                <option value="1">Money</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><lable>Action Types</lable></td>
+        <td>
+            <select js:id="actionTypeMultiSelect" js:generate-client-id="true" 
+            multiple="multiple" style="width:200px" data-placeholder="Action Types...">
+                <option value="0">Multiplied by percentage</option>
+                <option value="1">Reduce money</option>
+                <option value="2">Send gift</option>
+            </select>
+        </td>
+    </tr>
+    <js:include js:id="productDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        includedElementsText: 'Included Products',
+        excludedElementsText: 'Excluded Products',
+        includedElementsField: 'includedProductIds',
+        excludedElementsField: 'excludedProductIds',
+        dropDownTemplateName: 'ProductDropDown',
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Products...',
+            enableActiveChoices: true
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Products...',
+            enableActiveChoices: true
+        }
+    }"/>
+    <js:include js:id="giftProductDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        enableHasElements: (param.enableGiftProductDependencies || {}).enableHasElements,
+        hasElementsText: 'Has Gift Products',
+        includedElementsText: 'Included Gift Products',
+        excludedElementsText: 'Excluded Gift Products',
+        hasElementsField: 'hasGiftProducts',
+        includedElementsField: 'includedGiftProductIds',
+        excludedElementsField: 'excludedGiftProductIds',
+        dropDownTemplateName: 'ProductDropDown',
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Gift Products...',
+            enableActiveChoices: true
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Gift Products...',
+            enableActiveChoices: true
+        }
+    }"/>
+</table>

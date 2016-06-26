@@ -1,0 +1,1 @@
+Adds 5 points of damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air, and have a chance to dispel magic and slow the movement speed of an enemy for 3 seconds. Deals 150 bonus damage to summoned units. Orb of Lightning procs 35% of the time on Summoned and normal units

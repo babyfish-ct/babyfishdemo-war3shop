@@ -1,0 +1,1 @@
+Teleports a target friendly unit to its highest level town hall. This item won't affect allied units (due to abuse reasons)

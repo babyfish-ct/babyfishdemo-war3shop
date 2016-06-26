@@ -1,0 +1,1 @@
+Increases the Strength, Agility, and Intelligence of the Hero by 2 when worn

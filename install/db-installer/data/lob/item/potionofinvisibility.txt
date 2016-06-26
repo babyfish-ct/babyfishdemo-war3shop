@@ -1,0 +1,1 @@
+Renders the Hero invisible for 120 seconds when used. An invisible Hero is untargetable by the enemy unless detected. If the Hero attacks, uses an ability, or casts a spell, the invisibility effect is lost

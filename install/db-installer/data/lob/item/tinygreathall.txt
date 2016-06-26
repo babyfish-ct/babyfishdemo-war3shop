@@ -1,0 +1,1 @@
+Creates a Great Hall at a target location. Human, Night Elf, and Undead players will get their racial equivalent town hall

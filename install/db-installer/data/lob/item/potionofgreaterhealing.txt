@@ -1,0 +1,1 @@
+Heals 500 hit points when used

@@ -1,0 +1,545 @@
+<?xml version="1.0"?>
+<table 
+name="preferential"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key sequence="preferential_id_seq">
+            <column name="preferential_id" type="long"/>
+        </primary-key>
+        <column name="version" type="int"/>
+        <column name="active" type="boolean"/>
+        <column name="start_date" type="date"/>
+        <column name="end_date" type="date"/>
+        <column name="threshold_type" type="int"/>
+        <column name="action_type" type="int"/>
+        <foreign-key reference="product">
+            <column name="product_id" type="long"/>
+        </foreign-key>
+    </schema>
+    <data>
+        <row
+            preferential_id="1"
+            version="1"
+            active="true"
+            product_id="27"
+            start_date="-1 * 24 * 60 * 60 * 1000"
+            end_date="+29 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="2"
+            version="1"
+            active="true"
+            product_id="29"
+            start_date="-4 * 24 * 60 * 60 * 1000"
+            end_date="+26 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="3"
+            version="1"
+            active="true"
+            product_id="30"
+            start_date="-5 * 24 * 60 * 60 * 1000"
+            end_date="+25 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="4"
+            version="1"
+            active="true"
+            product_id="32"
+            start_date="-8 * 24 * 60 * 60 * 1000"
+            end_date="+22 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="1"/>
+        <row
+            preferential_id="5"
+            version="1"
+            active="true"
+            product_id="34"
+            start_date="-7 * 24 * 60 * 60 * 1000"
+            end_date="+23 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="2"/>
+        <row
+            preferential_id="6"
+            version="1"
+            active="true"
+            product_id="1"
+            start_date="-6 * 24 * 60 * 60 * 1000"
+            end_date="+24 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="0"/>
+        <row
+            preferential_id="7"
+            version="1"
+            active="true"
+            product_id="2"
+            start_date="-10 * 24 * 60 * 60 * 1000"
+            end_date="+20 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="1"/>
+        <row
+            preferential_id="8"
+            version="1"
+            active="true"
+            product_id="3"
+            start_date="-8 * 24 * 60 * 60 * 1000"
+            end_date="+22 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="9"
+            version="1"
+            active="true"
+            product_id="4"
+            start_date="-3 * 24 * 60 * 60 * 1000"
+            end_date="+27 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="0"/>
+        <row
+            preferential_id="10"
+            version="1"
+            active="true"
+            product_id="5"
+            start_date="-5 * 24 * 60 * 60 * 1000"
+            end_date="+25 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="11"
+            version="1"
+            active="true"
+            product_id="6"
+            start_date="-6 * 24 * 60 * 60 * 1000"
+            end_date="+24 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="12"
+            version="1"
+            active="true"
+            product_id="7"
+            start_date="-4 * 24 * 60 * 60 * 1000"
+            end_date="+26 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="0"/>
+        <row
+            preferential_id="13"
+            version="1"
+            active="true"
+            product_id="8"
+            start_date="-7 * 24 * 60 * 60 * 1000"
+            end_date="+23 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="1"/>
+        <row
+            preferential_id="14"
+            version="1"
+            active="true"
+            product_id="9"
+            start_date="-6 * 24 * 60 * 60 * 1000"
+            end_date="+24 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="2"/>
+        <row
+            preferential_id="15"
+            version="1"
+            active="true"
+            product_id="10"
+            start_date="-1 * 24 * 60 * 60 * 1000"
+            end_date="+29 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="0"/>
+        <row
+            preferential_id="16"
+            version="1"
+            active="true"
+            product_id="11"
+            start_date="-8 * 24 * 60 * 60 * 1000"
+            end_date="+22 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="17"
+            version="1"
+            active="true"
+            product_id="12"
+            start_date="-9 * 24 * 60 * 60 * 1000"
+            end_date="+21 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="18"
+            version="1"
+            active="true"
+            product_id="13"
+            start_date="-9 * 24 * 60 * 60 * 1000"
+            end_date="+21 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="19"
+            version="1"
+            active="true"
+            product_id="14"
+            start_date="-4 * 24 * 60 * 60 * 1000"
+            end_date="+26 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="20"
+            version="1"
+            active="true"
+            product_id="15"
+            start_date="-5 * 24 * 60 * 60 * 1000"
+            end_date="+25 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="21"
+            version="1"
+            active="true"
+            product_id="16"
+            start_date="-8 * 24 * 60 * 60 * 1000"
+            end_date="+22 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="22"
+            version="1"
+            active="true"
+            product_id="17"
+            start_date="-10 * 24 * 60 * 60 * 1000"
+            end_date="+20 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="23"
+            version="1"
+            active="true"
+            product_id="18"
+            start_date="-1 * 24 * 60 * 60 * 1000"
+            end_date="+29 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="2"/>
+        <row
+            preferential_id="24"
+            version="1"
+            active="true"
+            product_id="19"
+            start_date="-9 * 24 * 60 * 60 * 1000"
+            end_date="+21 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="25"
+            version="1"
+            active="true"
+            product_id="20"
+            start_date="-7 * 24 * 60 * 60 * 1000"
+            end_date="+23 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="1"/>
+        <row
+            preferential_id="26"
+            version="1"
+            active="true"
+            product_id="21"
+            start_date="-4 * 24 * 60 * 60 * 1000"
+            end_date="+26 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="27"
+            version="1"
+            active="true"
+            product_id="22"
+            start_date="-8 * 24 * 60 * 60 * 1000"
+            end_date="+22 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="28"
+            version="1"
+            active="true"
+            product_id="23"
+            start_date="-4 * 24 * 60 * 60 * 1000"
+            end_date="+26 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="29"
+            version="1"
+            active="true"
+            product_id="24"
+            start_date="-10 * 24 * 60 * 60 * 1000"
+            end_date="+20 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="30"
+            version="1"
+            active="true"
+            product_id="66"
+            start_date="-5 * 24 * 60 * 60 * 1000"
+            end_date="+25 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="31"
+            version="1"
+            active="true"
+            product_id="71"
+            start_date="-4 * 24 * 60 * 60 * 1000"
+            end_date="+26 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="32"
+            version="1"
+            active="true"
+            product_id="72"
+            start_date="-7 * 24 * 60 * 60 * 1000"
+            end_date="+23 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="2"/>
+        <row
+            preferential_id="33"
+            version="1"
+            active="true"
+            product_id="73"
+            start_date="-2 * 24 * 60 * 60 * 1000"
+            end_date="+28 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="34"
+            version="1"
+            active="true"
+            product_id="75"
+            start_date="-8 * 24 * 60 * 60 * 1000"
+            end_date="+22 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="35"
+            version="1"
+            active="true"
+            product_id="40"
+            start_date="-5 * 24 * 60 * 60 * 1000"
+            end_date="+25 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="2"/>
+        <row
+            preferential_id="36"
+            version="1"
+            active="true"
+            product_id="41"
+            start_date="-9 * 24 * 60 * 60 * 1000"
+            end_date="+21 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="37"
+            version="1"
+            active="true"
+            product_id="44"
+            start_date="-6 * 24 * 60 * 60 * 1000"
+            end_date="+24 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="1"/>
+        <row
+            preferential_id="38"
+            version="1"
+            active="true"
+            product_id="48"
+            start_date="-7 * 24 * 60 * 60 * 1000"
+            end_date="+23 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="2"/>
+        <row
+            preferential_id="39"
+            version="1"
+            active="true"
+            product_id="54"
+            start_date="-3 * 24 * 60 * 60 * 1000"
+            end_date="+27 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="40"
+            version="1"
+            active="true"
+            product_id="59"
+            start_date="-2 * 24 * 60 * 60 * 1000"
+            end_date="+28 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="1"/>
+        <row
+            preferential_id="41"
+            version="1"
+            active="true"
+            product_id="60"
+            start_date="-5 * 24 * 60 * 60 * 1000"
+            end_date="+25 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="42"
+            version="1"
+            active="true"
+            product_id="62"
+            start_date="-10 * 24 * 60 * 60 * 1000"
+            end_date="+20 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="43"
+            version="1"
+            active="true"
+            product_id="87"
+            start_date="-2 * 24 * 60 * 60 * 1000"
+            end_date="+28 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="44"
+            version="1"
+            active="true"
+            product_id="88"
+            start_date="-3 * 24 * 60 * 60 * 1000"
+            end_date="+27 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="45"
+            version="1"
+            active="true"
+            product_id="89"
+            start_date="-6 * 24 * 60 * 60 * 1000"
+            end_date="+24 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="0"/>
+        <row
+            preferential_id="46"
+            version="1"
+            active="true"
+            product_id="90"
+            start_date="-1 * 24 * 60 * 60 * 1000"
+            end_date="+29 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="1"/>
+        <row
+            preferential_id="47"
+            version="1"
+            active="true"
+            product_id="83"
+            start_date="-9 * 24 * 60 * 60 * 1000"
+            end_date="+21 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="2"/>
+        <row
+            preferential_id="48"
+            version="1"
+            active="true"
+            product_id="84"
+            start_date="-5 * 24 * 60 * 60 * 1000"
+            end_date="+25 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="49"
+            version="1"
+            active="true"
+            product_id="85"
+            start_date="-10 * 24 * 60 * 60 * 1000"
+            end_date="+20 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="50"
+            version="1"
+            active="true"
+            product_id="86"
+            start_date="-3 * 24 * 60 * 60 * 1000"
+            end_date="+27 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="2"/>
+        <row
+            preferential_id="51"
+            version="1"
+            active="true"
+            product_id="97"
+            start_date="-1 * 24 * 60 * 60 * 1000"
+            end_date="+29 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="0"/>
+        <row
+            preferential_id="52"
+            version="1"
+            active="true"
+            product_id="101"
+            start_date="-8 * 24 * 60 * 60 * 1000"
+            end_date="+22 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="1"/>
+        <row
+            preferential_id="53"
+            version="1"
+            active="true"
+            product_id="103"
+            start_date="-3 * 24 * 60 * 60 * 1000"
+            end_date="+27 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="2"/>
+        <row
+            preferential_id="54"
+            version="1"
+            active="true"
+            product_id="105"
+            start_date="-2 * 24 * 60 * 60 * 1000"
+            end_date="+28 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="0"/>
+        <row
+            preferential_id="55"
+            version="1"
+            active="true"
+            product_id="106"
+            start_date="-3 * 24 * 60 * 60 * 1000"
+            end_date="+27 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="1"/>
+        <row
+            preferential_id="56"
+            version="1"
+            active="true"
+            product_id="107"
+            start_date="-6 * 24 * 60 * 60 * 1000"
+            end_date="+24 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="2"/>
+        <row
+            preferential_id="57"
+            version="1"
+            active="true"
+            product_id="108"
+            start_date="-3 * 24 * 60 * 60 * 1000"
+            end_date="+27 * 24 * 60 * 60 * 1000"
+            threshold_type="1"
+            action_type="0"/>
+        <row
+            preferential_id="58"
+            version="1"
+            active="true"
+            product_id="109"
+            start_date="-2 * 24 * 60 * 60 * 1000"
+            end_date="+28 * 24 * 60 * 60 * 1000"
+            threshold_type="0"
+            action_type="1"/>
+    </data>
+</table>

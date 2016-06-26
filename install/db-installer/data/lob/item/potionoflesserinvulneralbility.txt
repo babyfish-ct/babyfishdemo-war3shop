@@ -1,0 +1,1 @@
+Makes the Hero invulnerable to damage for 7 seconds when used. An invulnerable Hero may not be the target of spells or effects

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<table
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <tbody>
+        <tr>
+            <td><label>Name</label></td>
+            <td>
+                <input js:id="likeNameTextBox" js:generate-client-id="true" 
+                type="text" class="k-textbox" style="width:200px"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td>
+                <input js:id="likeEmailTextBox" js:generate-client-id="true" 
+                type="text" class="k-textbox" style="width:200px"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Phone</label></td>
+            <td>
+                <input js:id="likePhoneTextBox" js:generate-client-id="true" 
+                type="text" class="k-textbox" style="width:200px"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Races</label></td>
+            <td>
+                <select js:id="raceMultiSelect" js:generate-client-id="true" 
+                multiple="multiple" style="width:200px" data-placeholder="Races...">
+                    <option value="0">Neutral</option>
+                    <option value="1">Human</option>
+                    <option value="2">Undead</option>
+                    <option value="3">Orc</option>
+                    <option value="4">NightEif</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+    <js:include js:id="productDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        hasElementsText: 'Has Products',
+        includedElementsText: 'Included Products',
+        excludedElementsText: 'Excluded Products',
+        enableHasElements: (param.enableProductDependencies || {}).enableHasElements,
+        hasElementsField: 'hasProducts',
+        includedElementsField: 'includedProductIds',
+        excludedElementsField: 'excludedProductIds',
+        dropDownTemplateName: 'ProductDropDown',
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Products...',
+            enableActiveChoices: true
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Products...',
+            enableActiveChoices: true
+        }
+    }"/>
+    <js:include js:id="purchaserDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        hasElementsText: 'Has Purchasers',
+        includedElementsText: 'Included Purchasers',
+        excludedElementsText: 'Excluded Purchasers',
+        enableHasElements: (param.enablePurchaserDependencies || {}).enableHasElements,
+        hasElementsField: 'hasPurchasers',
+        includedElementsField: 'includedPurchaserIds',
+        excludedElementsField: 'excludedPurchaserIds',
+        dropDownTemplateName: 'AdministratorDropDown',
+        dropDownTemplateParam: {
+            implicitSpecification: {
+                includedPrivilegeNames: 'purchase-products'
+            }
+        },
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Purchasers...',
+            dropDownTitle: 'Please select several included purcharsers'
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Purchasers...',
+            dropDownTitle: 'Please select several excluded purcharsers'
+        }
+    }"/>
+</table>

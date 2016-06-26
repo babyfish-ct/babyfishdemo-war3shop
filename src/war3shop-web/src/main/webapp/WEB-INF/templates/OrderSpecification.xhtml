@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<table
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <tbody>
+        <tr>
+            <td><label>Delivered</label></td>
+            <td>
+                <select js:id="deliveredDropDownList" js:generate-client-id="true" style="width:200px;">
+                    <option value="0">--Disinterest--</option>
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Min actual money</label></td>
+            <td>
+                <input js:id="minActualMoneyTextBoxEx" js:generate-client-id="true" type="number" style="width:200px;"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Max actual money</label></td>
+            <td>
+                <input js:id="maxActualMoneyTextBoxEx" js:generate-client-id="true" type="number" style="width:200px;"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Min creation time</label></td>
+            <td>
+                <input js:id="minCreationTimeDateTimePicker" js:generate-client-id="true" style="width:200px;"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Max creation time</label></td>
+            <td>
+                <input js:id="maxCreationTimeDateTimePicker" js:generate-client-id="true" style="width:200px;"/>
+            </td>
+        </tr>
+    </tbody>
+    <js:include js:id="customerDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        includedElementsText: 'Included Customers',
+        excludedElementsText: 'Excluded Customers',
+        includedElementsField: 'includedCustomerIds',
+        excludedElementsField: 'excludedCustomerIds',
+        dropDownTemplateName: 'CustomerDropDown',
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Customers...'
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Customers...'
+        }
+    }"/>
+    <js:include js:id="productDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        hasElementsText: 'Has Products',
+        includedElementsText: 'Included Products',
+        excludedElementsText: 'Excluded Products',
+        enableHasElements: (param.enableProductDependencies || {}).enableHasElements,
+        hasElementsField: 'hasProducts',
+        includedElementsField: 'includedProductIds',
+        excludedElementsField: 'excludedProductIds',
+        dropDownTemplateName: 'ProductDropDown',
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Products...',
+            enableActiveChoices: true
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Products...',
+            enableActiveChoices: true
+        }
+    }"/>
+    <js:include js:id="deliverymanDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        hasElementsText: 'Has Deliverymans',
+        includedElementsText: 'Included Deliverymans',
+        excludedElementsText: 'Excluded Deliverymans',
+        enableHasElements: (param.enableDeliverymanDependencies || {}).enableHasElements,
+        hasElementsField: 'hasDeliverymans',
+        includedElementsField: 'includedDeliverymanIds',
+        excludedElementsField: 'excludedDeliverymanIds',
+        dropDownTemplateName: 'AdministratorDropDown',
+        dropDownTemplateParam: {
+            implicitSpecification: {
+                includedPrivilegeNames: 'delivery-orders'
+            }
+        },
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Deliverymans...',
+            dropDownTitle: 'Please select several included deliverymans'
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Deliverymans...',
+            dropDownTitle: 'Please select several excluded deliverymans'
+        }
+    }"/>
+</table>

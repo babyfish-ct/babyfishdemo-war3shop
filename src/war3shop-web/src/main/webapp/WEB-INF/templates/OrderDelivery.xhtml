@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <h1>My Orders</h1>
+    <div>
+        <div style="width:370px;float:left">
+            <div class="k-block">
+                <div class="k-header panel-header">
+                    <span class="panel-title">Order Specification</span>
+                </div>
+                <div class="panel-content" style="text-align:center">
+                    <js:include 
+                    js:id="orderSpecification"
+                    js:specificationchanged="orderSpecification_specificationchanged"
+                    src="OrderSpecification"
+                    param="{ 
+                        enableCustomerDependencies: true,
+                        enableProductDependencies: true
+                    }"/>
+                </div>
+            </div>
+        </div>
+        <div style="margin-left:390px">
+            <div style="display:inline-block;">
+                <js:include 
+                js:id="orderGrid" 
+                src="OrderGrid" 
+                param="{url: 'sale/my-responsible-orders.spring', behavior: 'delivery' }"/>
+            </div>
+        </div>
+    </div>
+</div>

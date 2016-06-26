@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        
+        <!--
+            It's very important to set charset to be "utf-8",
+            Otherwise, kendoEditor will not work normally.
+        -->
+        <meta charset="utf-8"/>
+        
+        <title>BabyFishDemo - War3Shop</title>
+        <link href="kendo-ui/styles/kendo.common.min.css" rel="stylesheet"/>
+        <link href="kendo-ui/styles/kendo.rtl.min.css" rel="stylesheet"/>
+        <link id="kendoStyleLink" href="kendo-ui/styles/kendo.highcontrast.min.css" rel="stylesheet"/>
+        <link href="kendo-ui-extension.css" rel="stylesheet"/>
+        
+        <style type="text/css">
+            .k-listview:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+            body {
+                overflow: hidden !important;
+                font: Arial 14px;
+                font: 400 12px Arial, Helvetica, sans-serif;
+            }
+            .page {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                margin: 0px;
+                padding: 0px;
+                overflow: hidden;
+            }
+            .page-title {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                right: 0px;
+                height: 100px;
+                z-index: 1;
+                background-color: rgb(10, 10, 12);
+                background-image: url(images/war3shop.png);
+                background-repeat: no-repeat;
+                margin: 0px;
+                padding: 0px;
+            }
+            .page-content {
+                position: absolute;
+                left: 0px;
+                top: 100px;
+                right: 0px;
+                bottom: 0px;
+                margin: 0px;
+                padding: 20px;
+                padding-top: 0px;
+            }
+            .description {
+                position: absolute;
+                left: 400px;
+                height: 60px;
+                overflow: hidden;
+                white-space: nowarp;
+            }
+            .tool-icon {
+                text-align:right;
+                position: absolute;
+                right: 0px;
+                width: 100px;
+                height: 60px;
+                overflow: hidden;
+                white-space: nowarp;
+            }
+            .navigation {
+                position: absolute;
+                left: 400px;
+                right: 0px;
+                bottom: 0px;            
+            }
+            .navigation-menu-item {
+                font-size: 16px;
+            }
+            .panel-title {
+                padding-left: 10px;
+                font-weight: bold;
+            }
+            .panel-content {
+                padding: 10px;
+            }
+            div.space {
+                display: inline-block;
+                min-width:10px;
+                width: 10px;
+            }
+            tr.will-be-selected-tr-to-fix-chrome-bug {
+                font-weight: bold;
+                font-style: italic;
+            }
+        </style>
+        
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.cookie.js"></script>
+        
+        <script type="text/javascript" src="jquery-extension.js"></script>
+        
+        <!--
+            "alibaba-fastjson-aop.js" must be included before the js file of kendo ui
+            please see the comment of "alibaba-fastjson-aop.js" to know more.
+        -->
+        <script type="text/javascript" src="alibaba-fastjson-aop.js"></script>
+        
+        <script src="kendo-ui/js/kendo.web.min.js"></script>
+        <script type="text/javascript" src="kendo-ui-extension.js"></script>
+        
+        <script type="text/javascript" src="enum.js"></script>
+        <script type="text/javascript" src="linq.js"></script>
+        <script type="text/javascript" src="kendo-linq.js"></script>
+        <script type="text/javascript" src="deferred.js"></script>
+        <script type="text/javascript" src="math.js"></script>
+        <script type="text/javascript" src="ajax.js"></script>
+        <script type="text/javascript" src="querypath.js"></script>
+        <script type="text/javascript" src="image.js"></script>
+        <script type="text/javascript" src="Workflow.js"></script>
+        <script type="text/javascript" src="grayscale.js"></script>
+        <script type="text/javascript" src="error-handler.js"></script>
+        
+        <script type="text/javascript" src="template-script.js"></script>
+        
+        <script type="text/javascript" src="code-behind/Page.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/AlertDialog.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ConfirmDialog.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/LazyContainer.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ElementDependenciesTbody.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/UserAuthorization.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/UserLogin.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/UserRegister.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/UserConfiguration.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/UserPassword.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/CaptchaImage.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/AdministratorManagement.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/AdministratorSpecification.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/AdministratorGrid.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/AdministratorDialog.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/AdministratorDropDown.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/SysMailConfiguration.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/RoleManagement.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/RoleDialog.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/RoleMultiSelect.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/ManufacturerManagement.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ManufacturerSpecification.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ManufacturerGrid.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ManufacturerDialog.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ManufacturerDropDown.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/ProductManagement.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ProductViewForPurchaser.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ProductSpecification.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ProductGrid.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ProductDialog.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/ProductDropDown.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/PreferentialManagement.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/PreferentialSpecification.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/PreferentialGrid.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/PreferentialDialog.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/PreferentialItemGrid.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/PurchasingManagement.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/PurchasingSpecification.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/PurchasingGrid.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/PurchasingDialog.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/PurchasingItemGrid.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/SaleView.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/SalePanel.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/CartDialog.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/OrderDetailPanel.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/OrderManagement.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/OrderView.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/OrderDelivery.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/OrderSpecification.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/OrderGrid.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/OrderAddressDialog.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/AlarmManagement.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/AlarmSpecification.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/AlarmGrid.xhtml.js"></script>
+        
+        <script type="text/javascript" src="code-behind/CustomerManagement.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/CustomerDropDown.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/CustomerSpecification.xhtml.js"></script>
+        <script type="text/javascript" src="code-behind/CustomerList.xhtml.js"></script>
+        
+        <script type="text/javascript">
+            $(function() {
+                createTemplate("Page").appendTo(document.body);
+            });
+        </script>
+    </head>
+    <body class="k-content">
+    </body>
+</html>

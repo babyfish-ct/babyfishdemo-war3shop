@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<table 
+name="preferential_action"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key sequence="preferential_action_id_seq">
+            <column name="preferential_action_id" type="long"/>
+        </primary-key>
+        <foreign-key reference="order_item">
+            <column name="order_item_id" type="long"/>
+        </foreign-key>
+        <column name="matched_count" type="int"/>
+        <column name="threshold_type" type="int"/>
+        <column name="action_type" type="int"/>
+        <column name="threshold_quantity" type="int?"/>
+        <column name="threshold_money" type="decimal?"/>
+        <column name="percentage_factor" type="int?"/>
+        <column name="reduced_money" type="decimal?"/>
+        <foreign-key reference="product">
+            <column name="gift_product_id" type="long?"/>
+        </foreign-key>
+        <column name="gift_quantity" type="int?"/>
+        <column name="total_reduced_money" type="decimal"/>
+        <column name="total_gift_money" type="decimal"/>
+    </schema>
+</table>

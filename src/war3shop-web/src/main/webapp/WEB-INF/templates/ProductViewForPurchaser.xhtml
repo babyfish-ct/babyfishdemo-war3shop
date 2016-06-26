@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <h1>The Products that can be purchased by me</h1>
+    <div>
+        <div style="width:370px;float:left">
+            <div class="k-block">
+                <div class="k-header panel-header">
+                    <span class="panel-title">Product Specification</span>
+                </div>
+                <div class="panel-content" style="text-align:center">
+                    <js:include 
+                    js:id="productSpecification"
+                    js:specificationchanged="productSpecification_specificationchanged"
+                    src="ProductSpecification" 
+                    param="{
+                        enableManufacturerDependencies: {
+                            url: 'purchasing/my-purchased-manufacturers.spring'
+                        },
+                        enableInventoryRange: true
+                    }"/>
+                </div>
+            </div>
+        </div>
+        <div style="margin-left:390px">
+            <div style="display:inline-block;">
+                <js:include 
+                js:id="productGrid" 
+                src="ProductGrid" 
+                param="{
+                    url: 'purchasing/my-purchased-products.spring',
+                    mode:'readonly',
+                    enableManufacturerDependencies: true,
+                    columns: [
+                      { 
+                        field: 'id',
+                        title: 'ID'
+                      },
+                      {
+                        field: 'name',
+                        title: 'Name'
+                      },
+                      {
+                        field: 'type',
+                        title: 'Type',
+                        template: function(product) {
+                            return org.babyfishdemo.war3shop.entities.ProductType.values()[product.type].toString();
+                        }
+                      },
+                      {
+                        field: 'race',
+                        title: 'Race',
+                        template: function(product) {
+                            return org.babyfishdemo.war3shop.entities.Race.values()[product.race].toString();
+                        }
+                      },
+                      { 
+                        field: 'price',
+                        title: 'Price'
+                      },
+                      {
+                        field: 'inventory.quantity', /* For order by */
+                        title: 'Inventory Quantity',
+                        template: function(product) {
+                            return product.inventory ? product.inventory.quantity : 0;
+                        }
+                      }
+                ]
+                }"/>
+            </div>
+        </div>
+    </div>
+</div>

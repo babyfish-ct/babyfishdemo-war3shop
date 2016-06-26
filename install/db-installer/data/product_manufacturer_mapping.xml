@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table name="product_manufacturer_mapping" 
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key>
+            <foreign-key reference="product">
+                <column name="product_id" type="long"/>
+            </foreign-key>
+            <foreign-key reference="manufacturer">
+                <column name="manufacturer_id" type="long"/>
+            </foreign-key>
+        </primary-key>
+    </schema>
+    <data>
+        <row product_id="1" manufacturer_id="10"/>
+        <row product_id="2" manufacturer_id="10"/>
+        <row product_id="3" manufacturer_id="10"/>
+        <row product_id="4" manufacturer_id="10"/>
+        <row product_id="5" manufacturer_id="28"/>
+        <row product_id="6" manufacturer_id="28"/>
+        <row product_id="7" manufacturer_id="28"/>
+        <row product_id="8" manufacturer_id="28"/>
+        <row product_id="9" manufacturer_id="19"/>
+        <row product_id="10" manufacturer_id="19"/>
+        <row product_id="11" manufacturer_id="19"/>
+        <row product_id="12" manufacturer_id="19"/>
+        <row product_id="13" manufacturer_id="37"/>
+        <row product_id="14" manufacturer_id="37"/>
+        <row product_id="15" manufacturer_id="37"/>
+        <row product_id="16" manufacturer_id="37"/>
+        <row product_id="17" manufacturer_id="38"/>
+        <row product_id="18" manufacturer_id="38"/>
+        <row product_id="19" manufacturer_id="38"/>
+        <row product_id="20" manufacturer_id="38"/>
+        <row product_id="21" manufacturer_id="38"/>
+        <row product_id="22" manufacturer_id="38"/>
+        <row product_id="23" manufacturer_id="38"/>
+        <row product_id="24" manufacturer_id="38"/>
+        <row product_id="25" manufacturer_id="1"/>
+        <row product_id="25" manufacturer_id="2"/>
+        <row product_id="25" manufacturer_id="3"/>
+        <row product_id="26" manufacturer_id="4"/>
+        <row product_id="27" manufacturer_id="4"/>
+        <row product_id="28" manufacturer_id="4"/>
+        <row product_id="29" manufacturer_id="5"/>
+        <row product_id="30" manufacturer_id="5"/>
+        <row product_id="31" manufacturer_id="5"/>
+        <row product_id="32" manufacturer_id="5"/>
+        <row product_id="33" manufacturer_id="7"/>
+        <row product_id="34" manufacturer_id="8"/>
+        <row product_id="35" manufacturer_id="6"/>
+        <row product_id="36" manufacturer_id="6"/>
+        <row product_id="37" manufacturer_id="11"/>
+        <row product_id="37" manufacturer_id="12"/>
+        <row product_id="37" manufacturer_id="13"/>
+        <row product_id="38" manufacturer_id="11"/>
+        <row product_id="38" manufacturer_id="12"/>
+        <row product_id="38" manufacturer_id="13"/>
+        <row product_id="39" manufacturer_id="14"/>
+        <row product_id="40" manufacturer_id="14"/>
+        <row product_id="41" manufacturer_id="14"/>
+        <row product_id="42" manufacturer_id="15"/>
+        <row product_id="43" manufacturer_id="15"/>
+        <row product_id="44" manufacturer_id="15"/>
+        <row product_id="45" manufacturer_id="16"/>
+        <row product_id="46" manufacturer_id="16"/>
+        <row product_id="47" manufacturer_id="16"/>
+        <row product_id="48" manufacturer_id="17"/>
+        <row product_id="49" manufacturer_id="17"/>
+        <row product_id="50" manufacturer_id="29"/>
+        <row product_id="50" manufacturer_id="30"/>
+        <row product_id="50" manufacturer_id="31"/>
+        <row product_id="51" manufacturer_id="32"/>
+        <row product_id="52" manufacturer_id="32"/>
+        <row product_id="53" manufacturer_id="32"/>
+        <row product_id="54" manufacturer_id="32"/>
+        <row product_id="55" manufacturer_id="33"/>
+        <row product_id="56" manufacturer_id="33"/>
+        <row product_id="57" manufacturer_id="33"/>
+        <row product_id="58" manufacturer_id="34"/>
+        <row product_id="59" manufacturer_id="34"/>
+        <row product_id="60" manufacturer_id="34"/>
+        <row product_id="61" manufacturer_id="34"/>
+        <row product_id="62" manufacturer_id="35"/>
+        <row product_id="63" manufacturer_id="20"/>
+        <row product_id="63" manufacturer_id="21"/>
+        <row product_id="63" manufacturer_id="22"/>
+        <row product_id="64" manufacturer_id="23"/>
+        <row product_id="65" manufacturer_id="23"/>
+        <row product_id="66" manufacturer_id="23"/>
+        <row product_id="67" manufacturer_id="24"/>
+        <row product_id="68" manufacturer_id="24"/>
+        <row product_id="69" manufacturer_id="24"/>
+        <row product_id="70" manufacturer_id="25"/>
+        <row product_id="71" manufacturer_id="25"/>
+        <row product_id="72" manufacturer_id="25"/>
+        <row product_id="73" manufacturer_id="26"/>
+        <row product_id="74" manufacturer_id="27"/>
+        <row product_id="75" manufacturer_id="39"/>
+        <row product_id="76" manufacturer_id="39"/>
+        <row product_id="77" manufacturer_id="39"/>
+        <row product_id="77" manufacturer_id="18"/>
+        <row product_id="77" manufacturer_id="9"/>
+        <row product_id="77" manufacturer_id="36"/>
+        <row product_id="77" manufacturer_id="27"/>
+        <row product_id="78" manufacturer_id="36"/>
+        <row product_id="79" manufacturer_id="18"/>
+        <row product_id="80" manufacturer_id="18"/>
+        <row product_id="80" manufacturer_id="36"/>
+        <row product_id="80" manufacturer_id="27"/>
+        <row product_id="81" manufacturer_id="18"/>
+        <row product_id="82" manufacturer_id="27"/>
+        <row product_id="83" manufacturer_id="9"/>
+        <row product_id="84" manufacturer_id="18"/>
+        <row product_id="85" manufacturer_id="36"/>
+        <row product_id="86" manufacturer_id="27"/>
+        <row product_id="87" manufacturer_id="41"/>
+        <row product_id="88" manufacturer_id="39"/>
+        <row product_id="89" manufacturer_id="41"/>
+        <row product_id="90" manufacturer_id="41"/>
+        <row product_id="91" manufacturer_id="18"/>
+        <row product_id="91" manufacturer_id="9"/>
+        <row product_id="91" manufacturer_id="36"/>
+        <row product_id="91" manufacturer_id="27"/>
+        <row product_id="92" manufacturer_id="39"/>
+        <row product_id="93" manufacturer_id="39"/>
+        <row product_id="94" manufacturer_id="18"/>
+        <row product_id="94" manufacturer_id="9"/>
+        <row product_id="94" manufacturer_id="36"/>
+        <row product_id="94" manufacturer_id="27"/>
+        <row product_id="95" manufacturer_id="9"/>
+        <row product_id="96" manufacturer_id="9"/>
+        <row product_id="97" manufacturer_id="39"/>
+        <row product_id="97" manufacturer_id="9"/>
+        <row product_id="98" manufacturer_id="39"/>
+        <row product_id="99" manufacturer_id="18"/>
+        <row product_id="100" manufacturer_id="36"/>
+        <row product_id="101" manufacturer_id="39"/>
+        <row product_id="101" manufacturer_id="18"/>
+        <row product_id="101" manufacturer_id="9"/>
+        <row product_id="101" manufacturer_id="36"/>
+        <row product_id="101" manufacturer_id="27"/>
+        <row product_id="102" manufacturer_id="27"/>
+        <row product_id="103" manufacturer_id="18"/>
+        <row product_id="104" manufacturer_id="39"/>
+        <row product_id="105" manufacturer_id="36"/>
+        <row product_id="106" manufacturer_id="39"/>
+        <row product_id="107" manufacturer_id="40"/>
+        <row product_id="108" manufacturer_id="40"/>
+        <row product_id="109" manufacturer_id="40"/>
+    </data>
+</table>

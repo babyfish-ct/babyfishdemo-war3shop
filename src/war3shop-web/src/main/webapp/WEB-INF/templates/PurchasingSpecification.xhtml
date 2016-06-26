@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<table
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <tr>
+        <td><label>Min creation time</label></td>
+        <td>
+            <input js:id="minCreationTimeDateTimePicker" js:generate-client-id="true" style="width:200px;"/>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Max creation time</label></td>
+        <td>
+            <input js:id="maxCreationTimeDateTimePicker" js:generate-client-id="true" style="width:200px;"/>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Min Total Price</label></td>
+        <td>
+            <input js:id="minTotalPriceNumericTextBox" js:generate-client-id="true" 
+            type="number" style="width:200px" min="0"/>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Max Price</label></td>
+        <td>
+            <input js:id="maxTotalPriceNumericTextBox" js:generate-client-id="true" 
+            type="number" style="width:200px" min="0"/>
+        </td>
+    </tr>
+    <js:include js:id="productDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        hasElementsText: 'Has Products',
+        includedElementsText: 'Included Products',
+        excludedElementsText: 'Excluded Products',
+        hasElementsField: 'hasProducts',
+        includedElementsField: 'includedProductIds',
+        excludedElementsField: 'excludedProductIds',
+        dropDownTemplateName: 'ProductDropDown',
+        dropDownTemplateParam: {
+            url: (param.enableProductDependencies || {}).url
+        },
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Products...',
+            enableActiveChoices: true
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Products...',
+            enableActiveChoices: true
+        }
+    }"/>
+    <js:include js:id="manufacturerDependenciesTbody" src="ElementDependenciesTbody" param="{
+        lazyCreate: true,
+        hasElementsText: 'Has Manufacturers',
+        includedElementsText: 'Included Manufacturers',
+        excludedElementsText: 'Excluded Manufacturers',
+        hasElementsField: 'hasManufacturers',
+        includedElementsField: 'includedManufacturerIds',
+        excludedElementsField: 'excludedManufacturerIds',
+        dropDownTemplateName: 'ManufacturerDropDown',
+        dropDownTemplateParam: {
+            url: (param.enableManufacturerDependencies || {}).url
+        },
+        includedDropDownTemplateParam: {
+            placeholder: 'Included Manufacturers...'
+        },
+        excludedDropDownTemplateParam: {
+            placeholder: 'Excluded Manufacturers...'
+        }
+    }"/>
+</table>

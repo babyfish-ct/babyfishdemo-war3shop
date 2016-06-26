@@ -1,0 +1,1 @@
+Increases the movement speed of the Hero when worn. Boots of Speed do not stack. Two boots of speed will make a Hero just as fast as one

@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <div js:id="tabstrip">
+        <ul>
+            <li class="k-state-active">Login</li>
+            <li>Register</li>
+        </ul>
+        <div>
+              <js:include src="UserLogin" js:loginsuccessed="userLogin_loginsuccessed"/>
+        </div>
+        <div>
+              <js:include src="UserRegister" js:registiersuccessed="userRegister_registiersuccessed"/>
+        </div>
+    </div>
+</div>

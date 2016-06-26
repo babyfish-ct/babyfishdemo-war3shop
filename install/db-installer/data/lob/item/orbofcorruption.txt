@@ -1,0 +1,1 @@
+Adds 5 bonus damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air and reduce the armor (by 5) of enemy units for 5 seconds. Cannot be dispelled

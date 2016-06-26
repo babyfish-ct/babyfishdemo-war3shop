@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <h1>Manage alarms</h1>
+    <div>
+        <div style="width:350px;float:left">
+            <div class="k-block">
+                <div class="k-header panel-header">
+                    <span class="panel-title">Alarm Specification</span>
+                </div>
+                <div class="panel-content" style="text-align:center">
+                    <js:include 
+                    js:id="alarmSpecification" 
+                    src="AlarmSpecification"
+                    js:specificationchanged="alarmSpecification_specificationchanged"/>
+                </div>
+            </div>
+        </div>
+        <div style="margin-left:370px">
+            <div style="display:inline-block;">
+                <js:include js:id="alarmGrid" src="AlarmGrid"/>
+            </div>
+        </div>
+    </div>
+</div>

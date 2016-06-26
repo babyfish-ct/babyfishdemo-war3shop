@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:js="http://www.babyfishdemo.org/javascript"
+style="text-align:left">
+    <table>
+        <tbody>
+            <tr>
+                <td style="width:150px"><label>User: </label></td>
+                <td>
+                    <input js:id="nameTextBox" js:generate-client-id="true" type="text" class="k-textbox" style="width:200px;" 
+                    data-required-msg="Please inpu the name"/>
+                </td>
+                <td>
+                    <span class="k-invalid-msg"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:150px"><label>Email: </label></td>
+                <td>
+                    <input js:id="emailTextBox" js:generate-client-id="true" type="email" class="k-textbox" style="width:200px;" 
+                    data-email-msg="The email is invalid"/>
+                </td>
+                <td>
+                    <span class="k-invalid-msg"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Photo: </label></td>
+                <td colspan="2">
+                    <img js:id="originalPhoto"/>
+                    <div>
+                        <input js:id="photoUpload" js:generate-client-id="true" type="file" style="width:400px"/>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tbody js:id="customerTbody" style="display:none;">
+            <tr>
+                <td><label>Phone: </label></td>
+                <td>
+                    <input js:id="phoneTextBox" type="text" class="k-textbox" style="width:200px"
+                    js:generate-client-id="true" 
+                    required="true" pattern="(\+\d+-)?(\d+-)?\d+"
+                    data-required-msg="Please enter the phone" 
+                    data-pattern-msg="The phone format is invalid(eg: +86-028-XXXXXXXX)"/>
+                </td>
+                <td>
+                    <span class="k-invalid-msg"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Address: </label></td>
+                <td>
+                    <input js:id="addressTextBox" js:generate-client-id="true" type="text" class="k-textbox" style="width:200px;"
+                    required="true" data-required-msg="Please enter the address"/>
+                </td>
+                <td>
+                    <span class="k-invalid-msg"></span>
+                </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <input js:id="okButton" type="button" value="Ok" class="k-primary" js:click="okButton_click"/>
+                    <div class="space"></div>
+                    <input js:id="cancelButton" type="button" value="Cancel" js:click="cancelButton_click"/>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

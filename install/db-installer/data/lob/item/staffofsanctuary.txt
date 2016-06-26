@@ -1,0 +1,1 @@
+Teleports a target unit to your highest level town hall, stunning the unit and regenerating 15 hit points per second. Lasts until the unit is fully healed

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<table 
+name="role"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key sequence="role_id_seq">
+            <column name="role_id" type="long"/>
+        </primary-key>
+        <column name="version" type="int"/>
+        <unique>
+            <column name="name" type="string[50]"/>
+        </unique>
+    </schema>
+    <data>
+        <row 
+            role_id="1"
+            version="1"
+            name="product-manager"/>
+        <row 
+            role_id="2"
+            version="1"
+            name="purchase-commissioner"/>
+        <row 
+            role_id="3"
+            version="1"
+            name="order-dispatcher"/>
+        <row 
+            role_id="4"
+            version="1"
+            name="deliveryman"/>
+    </data>
+</table>

@@ -1,0 +1,1 @@
+Creates a Scout Tower at a target location

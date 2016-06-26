@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <h1>My Purchasings</h1>
+    <div style="width:350;float:left">
+        <js:include js:id="purchasingSpecification"
+        js:specificationchanged="purchasingSpecification_specificationchanged" 
+        src="PurchasingSpecification"
+        param="{
+            enableProductDependencies: {
+                url: 'purchasing/my-purchased-products.spring'
+            },
+            enableManufacturerDependencies: {
+                url: 'purchasing/my-purchased-manufacturers.spring'
+            }
+        }"/>
+    </div>
+    <div style="margin-left:360px">
+        <div style="display:inline-block;">
+            <js:include js:id="purchasingGrid" src="PurchasingGrid"/>
+        </div>
+    </div>
+
+</div>

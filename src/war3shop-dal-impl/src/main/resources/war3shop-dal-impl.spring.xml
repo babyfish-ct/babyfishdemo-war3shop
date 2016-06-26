@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:ctx="http://www.springframework.org/schema/context"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+    <ctx:component-scan base-package="org.babyfishdemo.war3shop.dal.impl"/>
+    
+    <bean id="databaseEnvironment" class="org.babyfishdemo.war3shop.dal.impl.DatabaseEnvironment">
+        <property name="defaultDatabase" value="HSQL"></property>
+        <property name="defaultDriverClassName" value="org.hsqldb.jdbc.JDBCDriver"/>
+        <property name="defaultUrl" value="jdbc:hsqldb:hsql://localhost:9999/babyfishdemo-war3shop"/>
+        <property name="defaultUsername" value="sa"/>
+        <property name="defaultPassword" value=""/>
+    </bean>
+    
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="#{databaseEnvironment.driverClassName}"/>
+        <property name="url" value="#{databaseEnvironment.url}"/>
+        <property name="username" value="#{databaseEnvironment.username}"/>
+        <property name="password" value="#{databaseEnvironment.password}"/>
+    </bean>
+    
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="org.babyfishdemo.war3shop.entities"/>
+        <property name="jpaVendorAdapter">
+            <!-- 
+            Be careful!
+            This is org.babyfish.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter.
+            not org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter.
+            When database is "ORACLE", it will use org.babyfish.hibernate.dialect.Oracle10gDialect,
+            (not org.hibernate.dialect.Oracle10Dialect), to support DistinctLimitQuery
+            -->
+            <bean class="org.babyfish.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="database" value="#{databaseEnvironment.database}"/>
+            </bean>
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">validate</prop>
+                <prop key="hibernate.order_updates">true</prop>
+                <prop key="hibernate.use_identifier_rollback">true</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                
+                <!-- 
+                    When data base is Oracle, use this.
+                    This property can let babyfish-hiberante create
+                    the user defined analytic function "DISTINCT_RANK(ROWID)"
+                    automatically when the XEntityManagerFactory/XSessionFactory
+                    is created.
+                    
+                    If the dialect does not implement the interface 
+                    "org.babyfish.hibernate.dialect.DistinctLimitDialect",
+                    this property will be ignored.
+                -->
+                <prop key="babyfish.hibernate.create_oracle_distinct_rank">true</prop>
+                
+                <!-- 
+                    Otherwise, use this.
+                    
+                    If the dialect has implemented the interface 
+                    "org.babyfish.hibernate.dialect.DistinctLimitDialect",
+                    this property will be ignored.
+                -->
+                <prop key="babyfish.hibernate.enable_limit_in_memory">true</prop>
+                
+                <!-- 
+                    In order to demonstrate how to work with both Hsqldb and Oracle, 
+                    both "babyfish.hibernate.enable_limit_in_memory" and "babyfish.hibernate.create_oracle_distinct_rank" are used
+                    in this demo.
+    
+                    In real projects, it unnecessary to work with two databases, please don't use both of them together.
+                -->
+                
+            </props>
+        </property>
+    </bean>
+    
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+    
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<table 
+name="admin_privilege_mapping"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key>
+            <foreign-key reference="user">
+                <column name="user_id" type="long"/>
+            </foreign-key>
+            <foreign-key reference="privilege">
+                <column name="privilege_id" type="long"/>
+            </foreign-key>
+        </primary-key>
+    </schema>
+</table>

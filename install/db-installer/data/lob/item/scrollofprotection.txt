@@ -1,0 +1,1 @@
+Increases the armor of all friendly units in an area around your Hero by 2 for 30 seconds

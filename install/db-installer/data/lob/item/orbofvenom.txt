@@ -1,0 +1,1 @@
+Adds 5 bonus damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air and poison enemy units for 6 seconds at 9 damage/sec

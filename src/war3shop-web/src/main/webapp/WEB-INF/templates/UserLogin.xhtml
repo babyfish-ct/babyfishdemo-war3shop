@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:js="http://www.babyfishdemo.org/javascript"
+style="text-align:left">
+    <table>
+        <tr>
+            <td><label>Name: </label></td>
+            <td>
+                <input js:id="nameTextBox" type="text" class="k-textbox" style="width:200px;"
+                js:generate-client-id="true"
+                required="true" data-required-msg="Please enter the email" data-email-msg="The email is invalid"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td><label>Password: </label></td>
+            <td>
+                <input js:id="passwordTextBox" type="password" class="k-textbox" style="width:200px;"
+                js:generate-client-id="true"
+                required="true" pattern="[A-Za-z0-9]+" data-required-msg="Please enter the password" data-pattern-msg="The password can only contains letter and digits"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td><label>Captcha: </label></td>
+            <td>
+                <input js:id="captchaTextBox" js:generate-client-id="true" type="text" class="k-textbox" style="width:200px;" 
+                required="true" data-required-msg="Please enter the captcha"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <js:include js:id="captchaImage" src="CaptchaImage" param="{url:'authorization/login-captcha.spring'}"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <input js:id="loginButton" type="button" value="Login" class="k-primary" js:click="loginButton_click"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:tns="http://www.babyfishdemo.org/war3shop/db-installer" 
+targetNamespace="http://www.babyfishdemo.org/war3shop/db-installer" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified">
+    <xs:element name="table">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="schema">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="primary-key">
+                                <xs:complexType>
+                                    <xs:group ref="tns:columnOrForeignKey" maxOccurs="unbounded"/>
+                                    <xs:attribute name="sequence" type="tns:nameType" use="optional"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                                <xs:element name="column" type="tns:columnType"/>
+                                <xs:element name="unique">
+                                    <xs:complexType>
+                                        <xs:group ref="tns:columnOrForeignKey" maxOccurs="unbounded"/>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element ref="tns:foreign-key"/>
+                            </xs:choice>
+                        </xs:sequence>
+                    </xs:complexType>
+                    <xs:unique name="columnNameUnique">
+                        <xs:selector xpath=".//tns:column"/>
+                        <xs:field xpath="@name"/>
+                    </xs:unique>
+                </xs:element>
+                <xs:element name="data" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="row" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:anyAttribute processContents="lax"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="tns:nameType" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:group name="columnOrForeignKey">
+        <xs:choice>
+            <xs:element name="column" type="tns:columnType"/>
+            <xs:element ref="tns:foreign-key"/>
+        </xs:choice>
+    </xs:group>
+    <xs:element name="foreign-key">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="column" type="tns:foreignKeyColumnType" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="reference" type="tns:nameType" use="required"/>
+        </xs:complexType>
+        <xs:unique name="referenceColumnNameUnique">
+            <xs:selector xpath="./tns:column"/>
+            <xs:field xpath="@reference"/>
+        </xs:unique>
+    </xs:element>
+    <xs:complexType name="columnType">
+        <xs:attribute name="name" type="tns:nameType" use="required"/>
+        <xs:attribute name="type" type="tns:typeType" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="foreignKeyColumnType">
+        <xs:complexContent>
+            <xs:extension base="tns:columnType">
+                <xs:attribute name="reference" type="tns:nameType" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:simpleType name="nameType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z_][A-Za-z0-9_]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="typeType">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(boolean|int|long|decimal|date|timestamp|clob|blob)\??"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(string|binary)\[\d+\]\??"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+</xs:schema>

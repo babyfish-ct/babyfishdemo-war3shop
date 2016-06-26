@@ -1,0 +1,1 @@
+Changes the time from day to night. Lasts 30 seconds

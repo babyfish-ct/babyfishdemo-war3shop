@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:js="http://www.babyfishdemo.org/javascript"
+style="text-align:left">
+    <table>
+        <tr>
+            <td><label>Name: </label></td>
+            <td>
+                <input js:id="nameTextBox" js:generate-client-id="true" type="text" class="k-textbox" style="width:200px;" js:change="nameTextBox_change"
+                required="true" data-required-msg="Please enter the name"/>
+            </td>
+            <td>
+                <span class="k-invalid-msg"></span>
+                <span js:id="nameExistenceLabel" class="k-tooltip" style="display:none">
+                    <span class="k-icon k-warning"></span>
+                    The name is already existing
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Password: </label></td>
+            <td>
+                <input js:id="passwordTextBox" js:generate-client-id="true" type="password" class="k-textbox" style="width:200px;" 
+                required="true" pattern="[A-Za-z0-9]+" 
+                data-required-msg="Please enter the password" 
+                data-pattern-msg="Password can only contains letter and digits"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td><label>Password Again: </label></td>
+            <td>
+                <input js:id="passwordAgainTextBox" js:generate-client-id="true" type="password" class="k-textbox" style="width:200px;" 
+                required="true" pattern="[A-Za-z0-9]+" 
+                data-required-msg="Please enter the password again" 
+                data-pattern-msg="Password can only contains letter and digits"
+                data-samepassword-msg="The two passwords must be same"/>
+            </td>
+            <td>
+                <span class="k-invalid-msg"></span>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:150px"><label>Email: </label></td>
+            <td>
+                <input js:id="emailTextBox" js:generate-client-id="true" type="email" class="k-textbox" style="width:200px;" 
+                data-email-msg="The email is invalid"/>
+            </td>
+            <td>
+                <span class="k-invalid-msg"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Phone: </label></td>
+            <td>
+                <input js:id="phoneTextBox" type="text" class="k-textbox" style="width:200px"
+                js:generate-client-id="true" 
+                required="true" pattern="(\+\d+-)?(\d+-)?\d+"
+                data-required-msg="Please enter the phone" 
+                data-pattern-msg="The phone format is invalid(eg: +86-028-XXXXXXXX)"/>
+            </td>
+            <td>
+                <span class="k-invalid-msg"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Address: </label></td>
+            <td>
+                <input js:id="addressTextBox" js:generate-client-id="true" type="text" class="k-textbox" style="width:200px;"
+                required="true" data-required-msg="Please enter the address"/>
+            </td>
+            <td>
+                <span class="k-invalid-msg"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Photo(At most 100MB): </label></td>
+            <td colspan="2">
+                <input js:id="photoUpload" js:generate-client-id="true"  type="file"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Captcha: </label></td>
+            <td>
+                <input js:id="captchaTextBox" js:generate-client-id="true" type="text" class="k-textbox" style="width:200px;" 
+                required="true" data-required-msg="Please enter the captcha"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <js:include js:id="captchaImage" src="CaptchaImage" param="{url:'authorization/register-captcha.spring'}"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <input js:id="registerButton" type="button" value="Register" class="k-primary" js:click="registerButton_click"/>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</div>

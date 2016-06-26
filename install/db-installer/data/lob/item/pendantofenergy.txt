@@ -1,0 +1,1 @@
+Increases the mana capacity of the Hero by 150 when worn

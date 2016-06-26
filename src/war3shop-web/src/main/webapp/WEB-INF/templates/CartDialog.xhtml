@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div 
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <div style="position:absolute;left:0px;right:0px;top:0px;bottom:140px;padding:20px;overflow:auto;">
+        <js:include js:id="orderDetailPanel" 
+        src="OrderDetailPanel" param="{
+            modifiable: true
+        }"/>
+    </div>
+    <div style="position:absolute;left:0px;right:0px;bottom:0px;height:140px;padding:20px;">
+        <div style="margin-top:20px;">
+            <table style="width:100%;">
+                <tr>
+                    <td style="text-align:right;width:50%">Total worth of this order: </td>
+                    <td js:id="totalExpectedMoneyTd">0</td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">Total reduced money: </td>
+                    <td js:id="totalReducedMoneyTd">0</td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">Total gift money: </td>
+                    <td js:id="totalGiftMoneyTd">0</td>
+                </tr>
+                <tr style="font-size:16px;font-weight:bold;">
+                    <td style="text-align:right">Total Actual money: </td>
+                    <td js:id="totalActualMoneyTd">0</td>
+                </tr>
+            </table>
+        </div>
+        <div style="margin-top:15px;text-align:center">
+            <button js:id="sumbitButton" js:click="submitButton_click">Submit&amp;Buy</button>
+        </div>
+    </div>
+</div>

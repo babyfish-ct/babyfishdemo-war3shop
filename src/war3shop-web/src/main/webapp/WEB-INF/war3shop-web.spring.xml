@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:ctx="http://www.springframework.org/schema/context"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <ctx:component-scan base-package="org.babyfishdemo.war3shop.web"/>
+    <ctx:component-scan base-package="org.babyfishdemo.war3shop.web.aop">
+        <ctx:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+        <ctx:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
+    </ctx:component-scan>
+    
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="maxUploadSize" value="100000000"/>  
+    </bean>
+    
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    
+    <util:map id="specialExceptionMessageMap" key-type="java.lang.Class">
+        <entry key="javax.persistence.OptimisticLockException" value="The data has been modified or deleted by another user"/>
+    </util:map>
+    
+    <bean id="loginCaptchaHolder" scope="session" class="org.babyfishdemo.war3shop.web.captcha.CaptchaHolder">
+        <aop:scoped-proxy/>
+        <property name="captchaService" ref="captchaService"/>
+    </bean>
+    
+    <bean id="registerCaptchaHolder" scope="session" class="org.babyfishdemo.war3shop.web.captcha.CaptchaHolder">
+        <aop:scoped-proxy/>
+        <property name="captchaService" ref="captchaService"/>
+    </bean>
+
+    <bean id="captchaService" scope="prototype" class="com.github.bingoohuang.patchca.custom.ConfigurableCaptchaService">
+        <aop:scoped-proxy/>
+        <property name="width" value="200"/>
+        <property name="height" value="60"/>
+        <property name="fontFactory">
+            <bean class="com.github.bingoohuang.patchca.font.RandomFontFactory">
+                <property name="minSize" value="30"/>
+                <property name="maxSize" value="40"/>
+            </bean>
+        </property>
+        <property name="wordFactory">
+            <bean class="com.github.bingoohuang.patchca.word.RandomWordFactory">
+                <!-- Does not contain 0 and o -->
+                <!-- Does not contain 1 and i -->
+                <!-- Does not contain 1 and l -->
+                <!-- Does not contain 2 and z -->
+                <!-- Does not contain 2 and Z -->
+                <!-- Does not contain 6 and b -->
+                <!-- Does not contain 9 and g -->
+                <!-- Does not contain 9 and q -->
+                <!-- Does not contain c and C -->
+                <!-- Does not contain i and I -->
+                <!-- Does not contain j and J -->
+                <!-- Does not contain k and K -->
+                <!-- Does not contain o and O -->
+                <!-- Does not contain p and P -->
+                <!-- Does not contain s and S -->
+                <!-- Does not contain u and U -->
+                <!-- Does not contain v and V -->
+                <!-- Does not contain w and W -->
+                <!-- Does not contain x and X -->
+                <!-- Does not contain z and Z -->
+                <!-- Does not contain D and O -->
+                <!-- In xml, "&amp;" is "&" -->
+                <property name="characters" value="@#$%^&amp;*34578adefhmnrtyABEFGHLMNQRTY"/>
+                <property name="minLength" value="4"/>
+                <property name="maxLength" value="4"/>
+            </bean>
+        </property>
+        <property name="backgroundFactory">
+            <bean class="com.github.bingoohuang.patchca.background.SingleColorBackgroundFactory">
+                <property name="colorFactory">
+                    <bean class="com.github.bingoohuang.patchca.color.RandomColorFactory">
+                        <property name="min" value="#{new java.awt.Color(0, 0, 0)}"/>
+                        <property name="max" value="#{new java.awt.Color(127, 127, 127)}"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+        <property name="colorFactory">
+            <bean class="com.github.bingoohuang.patchca.color.RandomColorFactory">
+                <property name="min" value="#{new java.awt.Color(127, 127, 127)}"/>
+                <property name="max" value="#{new java.awt.Color(255, 255, 255)}"/>
+            </bean>
+        </property>
+        <property name="filterFactory">
+            <bean class="org.babyfishdemo.war3shop.web.captcha.RandomFilterFactoryFactoryBean"/>
+        </property>
+    </bean>
+
+</beans>

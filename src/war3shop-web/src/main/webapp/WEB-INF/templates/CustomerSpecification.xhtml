@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<table
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <tbody>
+        <tr>
+            <td><label>Name: </label></td>
+            <td><input js:id="likeNameTextBox" js:generate-client-id="true" class="k-textbox" type="text" style="width:200px"/></td>
+        </tr>
+    </tbody>
+    <tbody js:id="activeTbody" style="display:none;">
+        <tr>
+            <td><label>Active: </label></td>
+            <td style="text-align:left;">
+                <select js:id="activeDropDownList" js:generate-client-id="true" style="width:200px;">
+                    <option value="0">--Disinterest--</option>
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td><label>Email: </label></td>
+            <td><input js:id="likeEmailTextBox" js:generate-client-id="true" class="k-textbox" type="text" style="width:200px"/></td>
+        </tr>
+        <tr>
+            <td><label>Min creation time: </label></td>
+            <td><input js:id="minCreationTimeDateTimePicker" js:generate-client-id="true" style="width:200px;"/></td>
+        </tr>
+        <tr>
+            <td><label>Max creation time: </label></td>
+            <td><input js:id="maxCreationTimeDateTimePicker" js:generate-client-id="true" style="width:200px;"/></td>
+        </tr>
+        <tr>
+            <td><label>Phone: </label></td>
+            <td><input js:id="likePhoneTextBox" js:generate-client-id="true" class="k-textbox" type="text" style="width:200px"/></td>
+        </tr>
+        <tr>
+            <td><label>Address: </label></td>
+            <td><input js:id="likeAddressTextBox" js:generate-client-id="true" class="k-textbox" type="text" style="width:200px"/></td>
+        </tr>
+    </tbody>
+</table>

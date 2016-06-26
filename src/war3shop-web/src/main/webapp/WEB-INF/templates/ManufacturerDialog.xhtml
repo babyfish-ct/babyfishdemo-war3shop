@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www./TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div 
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="http://www.babyfishdemo.org/javascript">
+    <table>
+        <tr>
+            <td><label>Name: </label></td>
+            <td>
+                <input js:id="nameTextBox" type="text" class="k-textbox" style="width:400px"
+                js:generate-client-id="true"
+                required="true" data-required-msg="Please enter the name"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td><label>Race: </label></td>
+            <td>
+                <select js:id="raceDropDownList" js:generate-client-id="true" style="width:400px">
+                    <option value="0">Neutral</option>
+                    <option value="1">Human</option>
+                    <option value="2">Undead</option>
+                    <option value="3">Orc</option>
+                    <option value="4">Nighteif</option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label>Email: </label></td>
+            <td>
+                <input js:id="emailTextBox" type="text" class="k-textbox" style="width:400px"
+                js:generate-client-id="true"
+                required="true" data-required-msg="Please enter the email"
+                data-email-msg="The email format is invalid"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td><label>Phone: </label></td>
+            <td>
+                <input js:id="phoneTextBox" type="text" class="k-textbox" style="width:400px"
+                js:generate-client-id="true" 
+                required="true" pattern="(\+\d+-)?(\d+-)?\d+"
+                data-required-msg="Please enter the phone" 
+                data-pattern-msg="The phone format is invalid(eg: +86-028-XXXXXXXX)"/>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td><label>Purchasers: </label></td>
+            <td>
+                <js:include js:id="purchaserDropDown" src="AdministratorDropDown" style="width:400px" 
+                param="{
+                    placeholder: 'Purchasers...',
+                    implicitSpecification: { includedPrivilegeNames: 'purchase-products' },
+                    dropDownTitle: 'Please select several purchases' 
+                }"/>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label>Photo: </label></td>
+            <td colspan="2">
+                <input js:id="photoUpload" js:generate-client-id="true" type="file" style="width:400px"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Description</label></td>
+            <td>
+                <textarea js:id="descriptionEditor" js:generate-client-id="true" 
+                style="width:600px;" rows="10" cols="40"
+                required="true" data-required-msg="Please enter the description"></textarea>
+            </td>
+            <td><span class="k-invalid-msg"></span></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <button js:id="saveButton" class="k-primary" js:click="saveButton_click">Save</button>
+                <div class="space"></div>
+                <button js:id="cancelButton" js:click="cancelButton_click">Cancel</button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</div>

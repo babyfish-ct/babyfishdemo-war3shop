@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<table 
+name="order"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key sequence="order_id_seq">
+            <column name="order_id" type="long"/>
+        </primary-key>
+        <column name="version" type="int"/>
+        <column name="gc_threshold" type="timestamp?"/>
+        <column name="creation_time" type="timestamp?"/>
+        <column name="delivered_time" type="timestamp?"/>
+        <foreign-key reference="user">
+            <column name="customer_id" type="long"/>
+        </foreign-key>
+        <foreign-key reference="user">
+            <column name="deliveryman_id" type="long?"/>        
+        </foreign-key>
+        <column name="total_expected_money" type="decimal"/>
+        <column name="total_reduced_money" type="decimal"/>
+        <column name="total_gift_money" type="decimal"/>
+        <column name="total_actual_money" type="decimal"/>
+        <!-- Can be null, but it should not be null when creation_time is not null -->
+        <column name="phone" type="string[20]?"/>
+        <!-- Can be null, but it should not be null when creation_time is not null -->
+        <column name="address" type="string[100]?"/>
+    </schema>
+</table>

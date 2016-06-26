@@ -1,0 +1,30 @@
+.k-dropdownpanel {
+    text-align: center;
+}
+.k-pageturnview {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+.k-pageturnview-content {
+    box-sizing: border-box;
+    position: relative;
+    left:0px;
+    top:0px;
+    right: 0px;
+    bottom: 40px;
+}
+.k-pageturnview-footer {
+    box-sizing: border-box;
+    position: relative;
+    left: 0px;
+    height: 40px;
+    right: 0px;
+    bottom: 0px;
+}
+.k-pageturnview-item {
+    float: left;
+    box-sizing: border-box;
+}

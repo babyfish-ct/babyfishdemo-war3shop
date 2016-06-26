@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<table 
+name="temporary_uploaded_file"
+xmlns="http://www.babyfishdemo.org/war3shop/db-installer" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.babyfishdemo.org/war3shop/db-installer table.xsd">
+    <schema>
+        <primary-key sequence="temporary_uploaded_file_id_seq">
+            <column name="temporary_uploaded_file_id" type="long"/>
+        </primary-key>
+        <column name="gc_threshold" type="timestamp"/>
+        <column name="mime_type" type="string[20]"/>
+        <column name="key" type="string[20]"/>
+        <column name="content" type="blob"/>
+    </schema>
+</table>
